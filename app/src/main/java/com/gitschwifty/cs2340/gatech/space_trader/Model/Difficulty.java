@@ -14,10 +14,15 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
 public enum Difficulty {
-    BEGINNER,
-    EASY,
-    NORMAL,
-    HARD,
-    IMPOSSIBLE;
+    BEGINNER("Beginnner"),
+    EASY("Easy"),
+    NORMAL("Normal"),
+    HARD("Hard"),
+    IMPOSSIBLE("Impossible");
+
+    private final String returnDifficulty;
+    Difficulty (String returnDifficulty){
+        this.returnDifficulty = returnDifficulty;
+    }
 
 }

@@ -21,19 +21,19 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
 
             // Spinner Drop down elements
-            List<String> categories = new ArrayList<String>();
-            categories.add("Beginner");
-            categories.add("Easy");
-            categories.add("Normal");
-            categories.add("Hard");
-            categories.add("Impossible");
+            List<Object> categories = new ArrayList<Object>();
+            categories.add(Difficulty.BEGINNER);
+            categories.add(Difficulty.EASY);
+            categories.add(Difficulty.NORMAL);
+            categories.add(Difficulty.HARD);
+            categories.add(Difficulty.IMPOSSIBLE);
         setContentView(R.layout.activity_login);
         // Spinner element
         Spinner spinner = (Spinner) findViewById(R.id.difficulty);
         // Spinner click listener
         spinner.setOnItemSelectedListener(this);
         // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+        ArrayAdapter<Object> dataAdapter = new ArrayAdapter<Object>(this, android.R.layout.simple_spinner_item, categories);
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // attaching data adapter to spinner
