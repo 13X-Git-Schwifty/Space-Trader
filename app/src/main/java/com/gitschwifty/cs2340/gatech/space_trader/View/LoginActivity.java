@@ -83,8 +83,9 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                     Toast.makeText(LoginActivity.this, "Skill Distribution Error!", Toast.LENGTH_SHORT).show();
                 } else {
                     Player newPlayer = new Player(name, pilot, fighter, trader, engineer, diffLevel);
-                    Toast.makeText(LoginActivity.this, newPlayer.toString(), Toast.LENGTH_LONG).show();
-                    finishAndRemoveTask();
+                    Intent intent = new Intent(LoginActivity.this, Loader.class);
+                    intent.putExtra("extra", newPlayer.toString());
+                    startActivity(intent);
                 }
 
             }
@@ -92,6 +93,11 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         }
 
     }
+
+    public void end(View v) {
+        finishAndRemoveTask();
+    }
+
     private boolean isEmpty(EditText etText) {
         if (etText.getText().toString().trim().length() > 0)
             return false;
