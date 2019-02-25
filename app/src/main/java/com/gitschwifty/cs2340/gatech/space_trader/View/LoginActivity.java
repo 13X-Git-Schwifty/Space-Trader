@@ -17,15 +17,9 @@ import com.gitschwifty.cs2340.gatech.space_trader.R;
 
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
 
-public class
-
-LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-=======
 //implements AdapterView.OnItemSelectedListener
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
->>>>>>> 12c54b566a2e666799ce053f2565c28c7916c4fb
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
