@@ -25,4 +25,7 @@ public enum Difficulty {
         this.returnDifficulty = returnDifficulty;
     }
 
+    public String getReturnDifficulty() {
+        return returnDifficulty;
+    }
 }
