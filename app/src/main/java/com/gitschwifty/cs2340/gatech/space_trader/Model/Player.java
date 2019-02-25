@@ -57,14 +57,13 @@ public class Player {
         Log.i(this.toString(), "Player created");
     }
 
-    @androidx.annotation.NonNull
     @Override
     public String toString() {
     return String.format("Player %s has been created! Your skills are: \n" +
                 "Pilot: %d\n Fighter: %d \n Trader: %d\n Engineer: %d\n" +
                 "Your difficulty level is %s and you have %d credits.", this.getName(),
                 this.getSkillPilot(), this.getSkillFighter(), this.getSkillTrader(), this.getSkillEngineer(),
-                this.getDiffLevel().getDiff(), this.getCreditScore(), this.getSpaceship().getName());
+                this.getDiffLevel().getReturnDifficulty(), this.getCreditScore(), this.getSpaceship().getName());
 
     }
 }
