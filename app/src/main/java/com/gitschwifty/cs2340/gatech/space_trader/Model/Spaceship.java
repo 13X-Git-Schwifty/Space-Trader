@@ -21,4 +21,8 @@ public enum Spaceship {
     public String getName() {
         return name;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 12c54b566a2e666799ce053f2565c28c7916c4fb

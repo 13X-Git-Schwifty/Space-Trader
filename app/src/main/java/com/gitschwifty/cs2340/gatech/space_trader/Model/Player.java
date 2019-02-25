@@ -54,16 +54,30 @@ public class Player {
         this.diffLevel = diffLevel;
         this.creditScore = 1000;
         this.currShip = Spaceship.GNAT;
+<<<<<<< HEAD
         Log.i(this.toString(), "Player created");
+=======
+        Log.i("Player created", this.toString());
+>>>>>>> 12c54b566a2e666799ce053f2565c28c7916c4fb
     }
 
     @Override
     public String toString() {
+<<<<<<< HEAD
     return String.format("Player %s has been created! Your skills are: \n" +
                 "Pilot: %d\n Fighter: %d \n Trader: %d\n Engineer: %d\n" +
                 "Your difficulty level is %s and you have %d credits.", this.getName(),
+=======
+        return String.format("Player %s has been created! Your skills are: \n" +
+                        "Pilot: %d\n Fighter: %d \n Trader: %d\n Engineer: %d\n" +
+                        "Your difficulty level is %s and you have %d credits.", this.getName(),
+>>>>>>> 12c54b566a2e666799ce053f2565c28c7916c4fb
                 this.getSkillPilot(), this.getSkillFighter(), this.getSkillTrader(), this.getSkillEngineer(),
                 this.getDiffLevel().getReturnDifficulty(), this.getCreditScore(), this.getSpaceship().getName());
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 12c54b566a2e666799ce053f2565c28c7916c4fb
