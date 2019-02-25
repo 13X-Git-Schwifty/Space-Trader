@@ -41,6 +41,10 @@ public class Player {
         return creditScore;
     }
 
+    public Spaceship getSpaceship() {
+        return currShip;
+    }
+
     public Player(String name, int skillPilot, int skillFighter, int skillTrader, int skillEngineer, Difficulty diffLevel) {
         this.name = name;
         this.skillPilot = skillPilot;
@@ -58,6 +62,9 @@ public class Player {
     public String toString() {
     return String.format("Player %s has been created! Your skills are: \n" +
                 "Pilot: %d\n Fighter: %d \n Trader: %d\n Engineer: %d\n" +
+                "Your difficulty level is %s and you have %d credits.", this.getName(),
+                this.getSkillPilot(), this.getSkillFighter(), this.getSkillTrader(), this.getSkillEngineer(),
+                this.getDiffLevel().getDiff(), this.getCreditScore(), this.getSpaceship().getName());
 
     }
 }
