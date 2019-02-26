@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.gitschwifty.cs2340.gatech.space_trader.Model.Difficulty;
+import com.gitschwifty.cs2340.gatech.space_trader.Model.NewUser;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.Player;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
@@ -83,6 +84,8 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                     Toast.makeText(LoginActivity.this, "Skill Distribution Error!", Toast.LENGTH_SHORT).show();
                 } else {
                     Player newPlayer = new Player(name, pilot, fighter, trader, engineer, diffLevel);
+                    NewUser newUser = new NewUser();
+                    newUser.writeNewUser(name, pilot, fighter, trader, engineer, diffLevel);
                     Intent intent = new Intent(LoginActivity.this, Loader.class);
                     intent.putExtra("extra", newPlayer.toString());
                     startActivity(intent);
