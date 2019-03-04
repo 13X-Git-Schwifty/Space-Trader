@@ -61,7 +61,7 @@ public class Player {
     public String toString() {
         return String.format("Player %s has been created! Your skills are:\n" +
                         "Pilot: %d\nFighter: %d \nTrader: %d\nEngineer: %d\n" +
-                        "Your difficulty level is %s, you have %d credits, and your ship is %s.", this.getName(),
+                        "Difficulty Level:  %s\nCredits: %d\nShip: %s", this.getName(),
                 this.getSkillPilot(), this.getSkillFighter(), this.getSkillTrader(), this.getSkillEngineer(),
                 this.getDiffLevel().getReturnDifficulty(), this.getCreditScore(), this.getSpaceship().getName());
 

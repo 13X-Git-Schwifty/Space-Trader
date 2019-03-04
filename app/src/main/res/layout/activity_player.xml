@@ -28,7 +28,20 @@
             android:text="default"
             android:textColor="#000"
             android:padding="20dp"/>
+
     </RelativeLayout>
 
-
+    <Button
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/emulogic"
+        android:onClick="universe"
+        android:text="Generate Universe"
+        android:padding="10dp"
+        android:textColor="#000" />
 </RelativeLayout>
