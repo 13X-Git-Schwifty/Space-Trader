@@ -33,4 +33,10 @@ public class CurrentPlanetActivity extends AppCompatActivity {
         Intent intent = new Intent(CurrentPlanetActivity.this, SolarSystemActivity.class);
         startActivity(intent);
     }
+
+    public void goToMarket(View v) {
+        Intent intent = new Intent(CurrentPlanetActivity.this, MarketPlace.class);
+        startActivity(intent);
+    }
+
 }

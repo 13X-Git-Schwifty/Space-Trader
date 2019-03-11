@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Space-Trader</string>
     <string name="difficulty">Difficulty</string>
+    <string name="title_activity_cargo_hold">CargoHold</string>
 </resources>
 
 

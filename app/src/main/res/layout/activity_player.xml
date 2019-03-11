@@ -40,7 +40,7 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/emulogic"
-        android:onClick="universe"
+        android:onClick="goToCurr"
         android:text="Generate Universe"
         android:padding="10dp"
         android:textColor="#000" />

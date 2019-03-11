@@ -21,7 +21,14 @@
         <activity android:name=".View.Loader" />
         <activity android:name=".View.PlayerActivity" />
         <activity android:name=".View.SolarSystemActivity" />
-        <activity android:name=".View.CurrentPlanetActivity"></activity>
+        <activity android:name=".View.CurrentPlanetActivity" />
+        <activity android:name=".View.MarketPlace" />
+        <activity
+            android:name=".Model.CargoHold"
+            android:label="@string/title_activity_cargo_hold"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".View.BuyItem" />
+        <activity android:name=".View.SellItem" />
     </application>
 
 </manifest>
