@@ -12,7 +12,7 @@
         android:layout_marginStart="87dp"
         android:layout_marginTop="90dp"
         android:text="Water"
-        android:textColor="blue"
+        android:textColor="#00f"
         android:textSize="17sp" />
 
 </RelativeLayout>

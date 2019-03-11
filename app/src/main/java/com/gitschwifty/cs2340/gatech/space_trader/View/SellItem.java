@@ -3,6 +3,8 @@ package com.gitschwifty.cs2340.gatech.space_trader.View;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.gitschwifty.cs2340.gatech.space_trader.R;
+
 public class SellItem extends AppCompatActivity {
 
     @Override

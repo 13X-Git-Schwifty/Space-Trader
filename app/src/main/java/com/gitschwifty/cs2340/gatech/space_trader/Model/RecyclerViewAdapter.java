@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.content.Context;
-import android
+import android.util.Log;
+import android.widget.Toast;
+
+import com.gitschwifty.cs2340.gatech.space_trader.R;
 
 import java.util.ArrayList;
 
@@ -35,14 +38,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
 
-        Log.d(TAG,"onBindView Holder Called");
+        Log.d(TAG, "onBindView Holder Called");
+
+        holder.parent_Layout.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+
+                Toast.makeText(mcontext, "Item Added", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
-        return 0;
+        return item_names.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -53,7 +66,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ViewHolder( View itemView) {
             super(itemView);
             item_name = itemView.findViewById(R.id.itemname);
-            parent_Layout = itemView.findViewById(R.id.parentLayout);
+            parent_Layout = itemView.findViewById(R.id.parent_layout);
 
         }
     }
