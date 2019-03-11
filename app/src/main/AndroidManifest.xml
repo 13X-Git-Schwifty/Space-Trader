@@ -21,7 +21,7 @@
         <activity android:name=".View.Loader" />
         <activity android:name=".View.PlayerActivity" />
         <activity android:name=".View.SolarSystemActivity" />
-        <activity android:name=".Model.MarketPlace"></activity>
+        <activity android:name=".View.CurrentPlanetActivity"></activity>
     </application>
 
 </manifest>
