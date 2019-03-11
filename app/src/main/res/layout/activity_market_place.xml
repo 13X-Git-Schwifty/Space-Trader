@@ -4,10 +4,10 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".Model.MarketPlace"
+tools:context=".View.MarketPlace"
 android:background="#000">
 
-<TextView
+    <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
@@ -17,124 +17,38 @@ android:background="#000">
     android:textColor="#fff"
     android:textSize="15dp" />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_centerVertical="true"
-    android:layout_marginStart="0dp"
-    android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/input_name"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Enter Name"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/pilot"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Pilot"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/fighter"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Fighter"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/trader"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Trader"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/engineer"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Engineer"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-    <Spinner
-        android:id="@+id/difficulty"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:popupBackground="#ffffff"
-        android:prompt="@string/difficulty"
-        android:fontFamily="@font/emulogic"/>
+        android:layout_alignParentTop="true"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="227dp"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <Button
+            android:id="@+id/buy"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/emulogic"
+            android:onClick="buyitem"
+            android:text="BUY"
+            android:textColor="#000" />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentBottom="true"
-    android:layout_gravity="bottom"
-    android:orientation="horizontal">
-
-    <Button
-        android:id="@+id/start"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/emulogic"
-        android:onClick="start"
-        android:text="Start Game"
-        android:textColor="#000" />
-
-    <Button
-        android:id="@+id/end"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/emulogic"
-        android:onClick="end"
-        android:text="End Game"
-        android:textColor="#000" />
-</LinearLayout>
+        <Button
+            android:id="@+id/end"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/emulogic"
+            android:onClick="sellitem"
+            android:text="SELL"
+            android:textColor="#000" />
+    </LinearLayout>
 
 </RelativeLayout>

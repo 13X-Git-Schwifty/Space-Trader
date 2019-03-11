@@ -21,7 +21,9 @@
         <activity android:name=".View.Loader" />
         <activity android:name=".View.PlayerActivity" />
         <activity android:name=".View.SolarSystemActivity" />
-        <activity android:name=".Model.MarketPlace"></activity>
+        <activity android:name=".View.MarketPlace" />
+        <activity android:name=".View.BuyItem" />
+        <activity android:name=".View.SellItem"></activity>
     </application>
 
 </manifest>
