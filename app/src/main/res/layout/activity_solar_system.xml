@@ -242,6 +242,15 @@
                 android:padding="20dp"
                 android:layout_marginTop="100dp"
                 android:textSize="15px"/>
+
+            <Button
+                android:id="@+id/marketplacebut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="buyitem"
+                android:text="Marketplace" />
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"

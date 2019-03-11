@@ -1,8 +1,10 @@
 package com.gitschwifty.cs2340.gatech.space_trader.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -34,5 +36,11 @@ public class SolarSystemActivity extends AppCompatActivity {
             }
             et.setText(ss[i].toString());
         }
+    }
+
+    public void buyitem (View v) {
+        Intent intent = new Intent(SolarSystemActivity.this, BuyItem.class);
+        startActivity(intent);
+
     }
 }
