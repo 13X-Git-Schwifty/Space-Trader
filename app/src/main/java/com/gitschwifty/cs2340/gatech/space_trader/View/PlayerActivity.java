@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.SolarSystem;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
@@ -21,7 +22,7 @@ public class PlayerActivity extends AppCompatActivity {
         playerText.setText(player);
     }
     public void universe(View v) {
-        Intent intent = new Intent(PlayerActivity.this, SolarSystemActivity.class);
+        Intent intent = new Intent(PlayerActivity.this, CurrentPlanetActivity.class);
         startActivity(intent);
     }
 }
