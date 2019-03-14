@@ -1,140 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".Model.MarketPlace"
-android:background="#000">
-
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:fontFamily="@font/emulogic"
-    android:text="    Welcome to Trading"
-    android:textAlignment="center"
-    android:textColor="#fff"
-    android:textSize="15dp" />
-
-<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_centerVertical="true"
-    android:layout_marginStart="0dp"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    tools:context=".View.MarketPlace">
 
-    <EditText
-        android:id="@+id/input_name"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Enter Name"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/pilot"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Pilot"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/fighter"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Fighter"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/trader"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Trader"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-
-    <EditText
-        android:id="@+id/engineer"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:hint="Skill Level: Engineer"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:fontFamily="@font/emulogic"
-        android:textSize="4pt"/>
-    <Spinner
-        android:id="@+id/difficulty"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_edit"
-        android:popupBackground="#ffffff"
-        android:prompt="@string/difficulty"
-        android:fontFamily="@font/emulogic"/>
-
-</LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentBottom="true"
-    android:layout_gravity="bottom"
-    android:orientation="horizontal">
+        android:layout_alignTop="@+id/button2"
+        android:layout_marginStart="97dp"
+        android:onClick="goToBuy"
+        android:text="Buy"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="102dp" />
 
     <Button
-        android:id="@+id/start"
-        android:layout_width="100dp"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/emulogic"
-        android:onClick="start"
-        android:text="Start Game"
-        android:textColor="#000" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="87dp"
+        android:layout_marginTop="126dp"
+        android:onClick="goToSell"
+        android:text="Sell"
+        tools:layout_editor_absoluteX="217dp"
+        tools:layout_editor_absoluteY="102dp" />
 
     <Button
-        android:id="@+id/end"
-        android:layout_width="100dp"
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/emulogic"
-        android:onClick="end"
-        android:text="End Game"
-        android:textColor="#000" />
-</LinearLayout>
-
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
+        android:onClick="goToCargo"
+        android:text="View My Cargo"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="390dp" />
 </RelativeLayout>

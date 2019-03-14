@@ -32,6 +32,9 @@ public enum SolarSystem {
         this.techLevel = techLevel;
         this.res = res;
     }
+    SolarSystem(String name) {
+        this.name = name;
+    }
 
     @Override
     public String toString() {

@@ -21,7 +21,7 @@ public class PlayerActivity extends AppCompatActivity {
         TextView playerText = (TextView) findViewById(R.id.player);
         playerText.setText(player);
     }
-    public void universe(View v) {
+    public void goToCurr(View v) {
         Intent intent = new Intent(PlayerActivity.this, CurrentPlanetActivity.class);
         startActivity(intent);
     }

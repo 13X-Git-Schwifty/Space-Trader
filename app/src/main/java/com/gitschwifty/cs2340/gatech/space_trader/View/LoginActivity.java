@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 //implements AdapterView.OnItemSelectedListener
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    public static Player newPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,9 +81,9 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                 int engineer = Integer.parseInt(e);
 
                 if (pilot + fighter + trader + engineer != 16) {
-                    Toast.makeText(LoginActivity.this, "Skill Distribution Error!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Skill Distribution Error! Skills should add up to 16.", Toast.LENGTH_SHORT).show();
                 } else {
-                    Player newPlayer = new Player(name, pilot, fighter, trader, engineer, diffLevel);
+                    newPlayer = new Player(name, pilot, fighter, trader, engineer, diffLevel);
                     NewUser newUser = new NewUser();
                     newUser.writeNewUser(name, pilot, fighter, trader, engineer, diffLevel);
                     Intent intent = new Intent(LoginActivity.this, Loader.class);
@@ -95,6 +95,10 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
         }
 
+    }
+
+    public static Player getNewPlayer() {
+        return newPlayer;
     }
 
     public void end(View v) {
