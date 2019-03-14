@@ -15,10 +15,12 @@ public enum Spaceship {
     Spaceship(String name) {
         this.name = name;
     }
+    Spaceship() {this.name = name;}
 
-    private String name;
+    public String name;
 
     public String getName() {
         return name;
     }
+
 }
