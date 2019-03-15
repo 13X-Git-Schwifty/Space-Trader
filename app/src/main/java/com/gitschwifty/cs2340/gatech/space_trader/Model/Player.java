@@ -14,7 +14,7 @@ public class Player {
     private int skillEngineer;
     private int skillTrader;
     private Difficulty diffLevel;
-    private int creditScore;
+    private static int creditScore;
     private Spaceship currShip;
     private int totalPoints;
 
@@ -46,7 +46,7 @@ public class Player {
         return diffLevel;
     }
 
-    public int getCreditScore() {
+    public static int getCreditScore() {
         return creditScore;
     }
 
