@@ -18,7 +18,7 @@ public class SellItem extends AppCompatActivity {
     }
 
 
-   
+
 
 
 }
