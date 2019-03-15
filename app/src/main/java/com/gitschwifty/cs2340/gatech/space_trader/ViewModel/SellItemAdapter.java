@@ -58,7 +58,8 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
                     GoodsList good = GoodsList.valueOf(Cargoitems.get(i));
                         LoginActivity.getNewPlayer().sell(Cargoitems.get(i));
                         Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
-                        Cargoitems.remove(holder.getAdapterPosition());
+                    LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(i));
+                    Cargoitems.remove(holder.getAdapterPosition());
                     notifyItemRemoved(holder.getAdapterPosition());
                     notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
 
