@@ -2,6 +2,11 @@ package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
 import android.util.Log;
 
+import com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter;
+
+import java.util.ArrayList;
+import java.util.Map;
+
 public class Player {
     private String name;
     private int skillPilot;
@@ -11,6 +16,10 @@ public class Player {
     private Difficulty diffLevel;
     private int creditScore;
     private Spaceship currShip;
+    private int totalPoints;
+
+    private int cargoSpace;
+    private ArrayList<GoodsList> playerGoods;
 
 
     public int getSkillPilot() {
@@ -45,6 +54,20 @@ public class Player {
         return currShip;
     }
 
+    public void setCargoSpace(int cargoSpace) {
+        this.cargoSpace = cargoSpace;
+    }
+
+
+    public void setCreditScore(int creditScore) {
+        this.creditScore = creditScore;
+    }
+
+    public ArrayList<GoodsList> getPlayerGoods() {
+        return playerGoods;
+
+    }
+
     public Player(String name, int skillPilot, int skillFighter, int skillTrader, int skillEngineer, Difficulty diffLevel) {
         this.name = name;
         this.skillPilot = skillPilot;
@@ -52,6 +75,8 @@ public class Player {
         this.skillFighter = skillFighter;
         this.skillTrader = skillTrader;
         this.diffLevel = diffLevel;
+        totalPoints = 16;
+        playerGoods = new ArrayList<>();
         this.creditScore = 1000;
         this.currShip = Spaceship.GNAT;
         Log.i("Player created", this.toString());
@@ -64,6 +89,69 @@ public class Player {
                         "Difficulty Level:  %s\nCredits: %d\nShip: %s", this.getName(),
                 this.getSkillPilot(), this.getSkillFighter(), this.getSkillTrader(), this.getSkillEngineer(),
                 this.getDiffLevel().getReturnDifficulty(), this.getCreditScore(), this.getSpaceship().getName());
+
+    }
+
+    public int calculatePointsLeft() {
+        totalPoints -= skillTrader;
+        totalPoints -= skillFighter;
+        totalPoints -= skillPilot;
+        totalPoints -= skillEngineer;
+        return totalPoints;
+    }
+
+    //can buy
+    public boolean canBuy(GoodsList good) {
+        if (this.getCreditScore() <= 0) {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
+
+    //can sell
+    public boolean canSell(GoodsList good) {
+        if (!playerGoods.contains(good)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    //the buying process
+    public boolean buy(String goodz) {
+        GoodsList good = GoodsList.valueOf(goodz);
+        if (canBuy(good) == false) {
+            return false;
+        } else {
+            this.setCreditScore(this.creditScore -= good.getPrice());
+            playerGoods.add(good);
+        }
+        good.setQuantity(good.getQuantity() + 1);
+        return true;
+    }
+
+    public void addToPlayerGoods(String good) {
+        playerGoods.add(GoodsList.valueOf(good));
+    }
+
+    public void removeFromPlayerGoods(String good) {
+        playerGoods.remove(GoodsList.valueOf(good));
+    }
+
+
+
+
+    //the selling process
+    public boolean sell(String goodie) {
+        GoodsList goods = GoodsList.valueOf(goodie);
+        this.setCreditScore(creditScore += goods.getPrice());
+            goods.setQuantity(goods.getQuantity() - 1);
+        playerGoods.remove(goods);
+            return true;
+
+
 
     }
 }

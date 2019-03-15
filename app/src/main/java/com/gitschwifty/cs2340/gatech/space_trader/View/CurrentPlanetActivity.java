@@ -12,13 +12,14 @@ import com.gitschwifty.cs2340.gatech.space_trader.Model.SolarSystem;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
 public class CurrentPlanetActivity extends AppCompatActivity {
+    static CurrentPlanet currentPlanet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_planet);
 
-        CurrentPlanet currentPlanet = new CurrentPlanet(0);
+        currentPlanet = new CurrentPlanet(0);
 
         ImageView imageView = findViewById(R.id.currPlanetIV);
         imageView.setImageResource(currentPlanet.imagePath);
@@ -39,4 +40,7 @@ public class CurrentPlanetActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    static public CurrentPlanet getCurrentPlanet() {
+        return currentPlanet;
+    }
 }
