@@ -136,12 +136,19 @@ public class Player {
         playerGoods.add(GoodsList.valueOf(good));
     }
 
+    public void removeFromPlayerGoods(String good) {
+        playerGoods.remove(GoodsList.valueOf(good));
+    }
+
+
+
 
     //the selling process
     public boolean sell(String goodie) {
         GoodsList goods = GoodsList.valueOf(goodie);
         this.setCreditScore(creditScore += goods.getPrice());
             goods.setQuantity(goods.getQuantity() - 1);
+        playerGoods.remove(goods);
             return true;
 
 

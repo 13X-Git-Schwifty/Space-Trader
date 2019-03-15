@@ -43,7 +43,7 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BuyItemViewHolder holder, final int i) {
+    public void onBindViewHolder(@NonNull final BuyItemViewHolder holder, final int i) {
         Log.d("hello", "onBindViewHolder: called.") ;
         holder.buyItemName.setText(Cargoitems.get(i));
         holder.buyItemPrice.setText(Cargoitemprice.get(i).toString());
@@ -57,7 +57,11 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
                 else {
                     GoodsList good = GoodsList.valueOf(Cargoitems.get(i));
                         LoginActivity.getNewPlayer().sell(Cargoitems.get(i));
-                        Toast.makeText(mContext, "Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
+                        Cargoitems.remove(holder.getAdapterPosition());
+                    notifyItemRemoved(holder.getAdapterPosition());
+                    notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
+
                     }
             }
             });
