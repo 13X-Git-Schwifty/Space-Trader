@@ -56,7 +56,6 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
                 }
                 else {
                     GoodsList good = GoodsList.valueOf(Cargoitems.get(i));
-                    good.setPrice(0);
                         LoginActivity.getNewPlayer().sell(Cargoitems.get(i));
                         Toast.makeText(mContext, "Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
                     }
