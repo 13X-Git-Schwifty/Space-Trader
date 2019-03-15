@@ -17,7 +17,6 @@ public class Player {
     private static int creditScore;
     private Spaceship currShip;
     private int totalPoints;
-
     private int cargoSpace;
     private ArrayList<GoodsList> playerGoods;
 
@@ -76,7 +75,7 @@ public class Player {
         this.skillTrader = skillTrader;
         this.diffLevel = diffLevel;
         totalPoints = 16;
-        playerGoods = new ArrayList<>();
+        playerGoods = new ArrayList<>(20);
         this.creditScore = 1000;
         this.currShip = Spaceship.GNAT;
         Log.i("Player created", this.toString());
@@ -102,7 +101,9 @@ public class Player {
 
     //can buy
     public boolean canBuy(GoodsList good) {
-        if (this.getCreditScore() <= 0) {
+        if (playerGoods.size() + 1 > 20) {
+            return false;
+        } else if (this.getCreditScore() <= 0) {
             return false;
         } else
         {
@@ -136,17 +137,22 @@ public class Player {
         playerGoods.add(GoodsList.valueOf(good));
     }
 
+    public void removeFromPlayerGoods(String good) {
+        playerGoods.remove(GoodsList.valueOf(good));
+    }
+
+
+
 
     //the selling process
-    public boolean sell(GoodsList good) {
-        if (!canSell(good) || good.getQuantity() == 0) {
-            return false;
-        } else {
-            this.setCreditScore(creditScore += good.getPrice());
-            good.setQuantity(good.getQuantity() - 1);
+    public boolean sell(String goodie) {
+        GoodsList goods = GoodsList.valueOf(goodie);
+        this.setCreditScore(creditScore += goods.getPrice());
+            goods.setQuantity(goods.getQuantity() - 1);
+        playerGoods.remove(goods);
             return true;
 
 
-        }
+
     }
 }

@@ -17,17 +17,17 @@ import java.util.ArrayList;
 public class BuyItem extends AppCompatActivity {
     private static final String TAG = "BuyItem";
 
-    public ArrayList<String> getmItemNames() {
+    public static ArrayList<String> getmItemNames() {
         return mItemNames;
     }
 
-    public ArrayList<Integer> getmItemPrices() {
+    public static ArrayList<Integer> getmItemPrices() {
         return mItemPrices;
     }
 
     //vars
-    private ArrayList<String> mItemNames = new ArrayList<>();
-    private ArrayList<Integer> mItemPrices = new ArrayList<>();
+    private static ArrayList<String> mItemNames = new ArrayList<>();
+    private static ArrayList<Integer> mItemPrices = new ArrayList<>();
 
 
     @Override
@@ -35,6 +35,7 @@ public class BuyItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_item);
         Log.d(TAG, "onCreate: started.");
+        updateInfo();
         initItems();
     }
 
@@ -62,6 +63,15 @@ public class BuyItem extends AppCompatActivity {
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        }
+
+        public void updateInfo() {
+            //creditScore
+            TextView creditScoreTV = findViewById(R.id.creditScoreDisplay);
+            creditScoreTV.setText("Your credit score is: " + LoginActivity.getNewPlayer().getCreditScore());
+            //cargo space
+            TextView cargoSpaceTV = findViewById(R.id.cargoSpaceDisplay);
+            cargoSpaceTV.setText("Remaingin cargo space is: " + (20 - LoginActivity.getNewPlayer().getPlayerGoods().size()));
         }
 
 }

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.gitschwifty.cs2340.gatech.space_trader.Model.GoodsList;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
+import com.gitschwifty.cs2340.gatech.space_trader.View.BuyItem;
 import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
 
 import java.util.ArrayList;
@@ -21,6 +22,19 @@ public class BuyItemAdapter extends RecyclerView.Adapter<BuyItemAdapter.BuyItemV
     private static final String TAG = "RecyclerViewAdapter_BuyItem";
 
     private ArrayList<String> mItemNames = new ArrayList<>();
+
+    public static ArrayList<String> getCargoitems() {
+        return Cargoitems;
+    }
+
+    private static ArrayList<String> Cargoitems = new ArrayList<>(20);
+
+    public static ArrayList<Integer> getCargoitemprice() {
+        return Cargoitemprice;
+    }
+
+    private static ArrayList<Integer> Cargoitemprice = new ArrayList<>();
+
     private ArrayList<Integer> mItemPrices = new ArrayList<>();
     private Context mContext;
 
@@ -51,18 +65,31 @@ public class BuyItemAdapter extends RecyclerView.Adapter<BuyItemAdapter.BuyItemV
                     Toast.makeText(mContext, mItemNames.get(i) + " is unavailable.", Toast.LENGTH_SHORT).show();
                 } else {
                     GoodsList good = GoodsList.valueOf(mItemNames.get(i));
+
+                    Cargoitems.add(mItemNames.get(i));
+                    Cargoitemprice.add(mItemPrices.get(i));
                     good.setPrice(mItemPrices.get(i));
                     LoginActivity.getNewPlayer().addToPlayerGoods(mItemNames.get(i));
-                    if ((LoginActivity.getNewPlayer().canBuy(good) == false)
-                    || (mItemPrices.get(i) > LoginActivity.getNewPlayer().getCreditScore()))      {
-                         Toast.makeText(mContext, "You can't buy it.", Toast.LENGTH_SHORT).show();
+                    if (LoginActivity.getNewPlayer().canBuy(good) == false){
+                        Toast.makeText(mContext, "Not enough cargo capacity.", Toast.LENGTH_SHORT).show();
+                    } else if (mItemPrices.get(i) > LoginActivity.getNewPlayer().getCreditScore())     {
+                         Toast.makeText(mContext, "Not enough credits", Toast.LENGTH_SHORT).show();
                     } else {
                       LoginActivity.getNewPlayer().buy(mItemNames.get(i));
-                    Toast.makeText(mContext, "Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
-                }       }
-            }   }
-            
-                );
+                      Toast.makeText(mContext, "Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
+
+                      //update Info
+                      //creditScore
+                        TextView creditScoreTV = ((BuyItem)mContext).findViewById(R.id.creditScoreDisplay);
+                        creditScoreTV.setText("Your credit score is: " + LoginActivity.getNewPlayer().getCreditScore());
+                        //cargo space
+                        TextView cargoSpaceTV = ((BuyItem)mContext).findViewById(R.id.cargoSpaceDisplay);
+                        cargoSpaceTV.setText("Remaining cargo space is " + (20 - getCargoitems().size()));
+                    }
+
+                }
+            }
+        });
 
     }
 

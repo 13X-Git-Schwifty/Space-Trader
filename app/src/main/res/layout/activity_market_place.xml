@@ -32,15 +32,15 @@
         tools:layout_editor_absoluteX="217dp"
         tools:layout_editor_absoluteY="102dp" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
-        android:onClick="goToCargo"
-        android:text="View My Cargo"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="390dp" />
+    <!--<Button-->
+        <!--android:id="@+id/button3"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="170dp"-->
+        <!--android:onClick="goToCargo"-->
+        <!--android:text="View My Cargo"-->
+        <!--tools:layout_editor_absoluteX="127dp"-->
+        <!--tools:layout_editor_absoluteY="390dp" />-->
 </RelativeLayout>

@@ -5,10 +5,38 @@
     android:layout_height="match_parent"
     tools:context=".View.BuyItem">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="230dp"
+        android:layout_height="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/buy_item_recycler_view"
+        android:layout_marginTop="24dp"
+        android:text="Tap an item to purchase it." />
+
+    <TextView
+        android:id="@+id/creditScoreDisplay"
+        android:layout_width="87dp"
+        android:layout_height="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="61dp"
+        android:text="wghgth" />
+
+    <TextView
+        android:id="@+id/cargoSpaceDisplay"
+        android:layout_width="77dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/buy_item_recycler_view"
+        android:layout_alignTop="@+id/creditScoreDisplay"
+        android:text="ehethheteh" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/buy_item_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_width="302dp"
+        android:layout_height="484dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp" />
+
 </RelativeLayout>
