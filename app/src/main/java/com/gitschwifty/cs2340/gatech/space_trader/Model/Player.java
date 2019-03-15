@@ -138,15 +138,13 @@ public class Player {
 
 
     //the selling process
-    public boolean sell(GoodsList good) {
-        if (!canSell(good) || good.getQuantity() == 0) {
-            return false;
-        } else {
-            this.setCreditScore(creditScore += good.getPrice());
-            good.setQuantity(good.getQuantity() - 1);
+    public boolean sell(String goodie) {
+        GoodsList goods = GoodsList.valueOf(goodie);
+        this.setCreditScore(creditScore += goods.getPrice());
+            goods.setQuantity(goods.getQuantity() - 1);
             return true;
 
 
-        }
+
     }
 }

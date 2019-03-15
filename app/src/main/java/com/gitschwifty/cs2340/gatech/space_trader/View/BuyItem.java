@@ -17,9 +17,17 @@ import java.util.ArrayList;
 public class BuyItem extends AppCompatActivity {
     private static final String TAG = "BuyItem";
 
+    public static ArrayList<String> getmItemNames() {
+        return mItemNames;
+    }
+
+    public static ArrayList<Integer> getmItemPrices() {
+        return mItemPrices;
+    }
+
     //vars
-    private ArrayList<String> mItemNames = new ArrayList<>();
-    private ArrayList<Integer> mItemPrices = new ArrayList<>();
+    private static ArrayList<String> mItemNames = new ArrayList<>();
+    private static ArrayList<Integer> mItemPrices = new ArrayList<>();
 
 
     @Override
