@@ -29,9 +29,9 @@ public class SellItem extends AppCompatActivity {
 
 
     private void initItems() {
-        for (int i =0;i<cargoitems.size();i++) {
+        for (int i = 0;i<cargoitems.size();i++) {
 
-            temp.add(cargoitems.get(i));
+            temp.add(cargoitems.get(i).toString());
             temp1.add(cargoitemsPrice.get(i));
 
         }
@@ -52,7 +52,7 @@ public class SellItem extends AppCompatActivity {
     private void initRecyclerView() {
 
         RecyclerView recyclerView = findViewById(R.id.sell_item_recycler_view);
-        SellItemAdapter adapter = new SellItemAdapter(cargoitems, cargoitemsPrice, this);
+        SellItemAdapter adapter = new SellItemAdapter(temp, temp1, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

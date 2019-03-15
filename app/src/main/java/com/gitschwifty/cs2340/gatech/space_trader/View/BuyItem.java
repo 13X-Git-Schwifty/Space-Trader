@@ -35,6 +35,7 @@ public class BuyItem extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_item);
         Log.d(TAG, "onCreate: started.");
+        updateInfo();
         initItems();
     }
 
@@ -62,6 +63,15 @@ public class BuyItem extends AppCompatActivity {
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        }
+
+        public void updateInfo() {
+            //creditScore
+            TextView creditScoreTV = findViewById(R.id.creditScoreDisplay);
+            creditScoreTV.setText("Your credit score is: " + LoginActivity.getNewPlayer().getCreditScore());
+            //cargo space
+            TextView cargoSpaceTV = findViewById(R.id.cargoSpaceDisplay);
+            cargoSpaceTV.setText("Remaingin cargo space is: " + (20 - LoginActivity.getNewPlayer().getPlayerGoods().size()));
         }
 
 }

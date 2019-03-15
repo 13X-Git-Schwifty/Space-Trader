@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".View.SellItem">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="230dp"
+        android:layout_height="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/buy_item_recycler_view"
+        android:layout_marginTop="24dp"
+        android:text="Tap an item to sell it." />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/sell_item_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_width="302dp"
+        android:layout_height="484dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp" />
 
 </RelativeLayout>

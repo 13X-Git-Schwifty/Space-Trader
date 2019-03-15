@@ -26,8 +26,8 @@ public class MarketPlace extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToCargo(View v) {
-        Intent intent = new Intent(MarketPlace.this,CargoHold.class);
-        startActivity(intent);
-    }
+//    public void goToCargo(View v) {
+//        Intent intent = new Intent(MarketPlace.this,CargoHold.class);
+//        startActivity(intent);
+//    }
 }

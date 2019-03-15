@@ -43,27 +43,45 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final BuyItemViewHolder holder, final int i) {
+    public void onBindViewHolder(@NonNull final BuyItemViewHolder holder, final int i) throws NullPointerException {
         Log.d("hello", "onBindViewHolder: called.") ;
         holder.buyItemName.setText(Cargoitems.get(i));
         holder.buyItemPrice.setText(Cargoitemprice.get(i).toString());
 
-        holder.buyItemLayout.setOnClickListener(new View.OnClickListener(){
+        holder.buyItemLayout.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
                 if (Cargoitemprice.get(i) == 0) {
                     Toast.makeText(mContext, Cargoitems.get(i) + " is unavailable to sell.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    GoodsList good = GoodsList.valueOf(Cargoitems.get(i));
-                        LoginActivity.getNewPlayer().sell(Cargoitems.get(i));
+                    try {
+                        if (i >= Cargoitems.size()) {
+                            LoginActivity.getNewPlayer().sell(Cargoitems.get(0));
+                            Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
+                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
+                            Cargoitems.remove(holder.getAdapterPosition());
+                            notifyItemRemoved(holder.getAdapterPosition());
+                            notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
+                        } else {
+                            GoodsList good = GoodsList.valueOf(Cargoitems.get(i));
+                            LoginActivity.getNewPlayer().sell(Cargoitems.get(i));
+                            Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
+                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(i));
+                            Cargoitems.remove(holder.getAdapterPosition());
+                            notifyItemRemoved(holder.getAdapterPosition());
+                            notifyItemRangeChanged(holder.getAdapterPosition(), Cargoitems.size());
+                        }
+                    } catch (NullPointerException e) {
+                        LoginActivity.getNewPlayer().sell(Cargoitems.get(0));
                         Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
-                    LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(i));
-                    Cargoitems.remove(holder.getAdapterPosition());
-                    notifyItemRemoved(holder.getAdapterPosition());
-                    notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
-
+                        LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
+                        Cargoitems.remove(holder.getAdapterPosition());
+                        notifyItemRemoved(holder.getAdapterPosition());
+                        notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
                     }
+                    }
+
             }
             });
 
