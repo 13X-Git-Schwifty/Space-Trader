@@ -13,6 +13,7 @@ package com.gitschwifty.cs2340.gatech.space_trader.ViewModel;
         import android.widget.Toast;
 
         import com.gitschwifty.cs2340.gatech.space_trader.Model.GoodsList;
+        import com.gitschwifty.cs2340.gatech.space_trader.Model.Player;
         import com.gitschwifty.cs2340.gatech.space_trader.R;
         import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
         import com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter;
@@ -27,6 +28,8 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
      ArrayList<String> Cargoitems;
     ArrayList<Integer> Cargoitemprice;
     private Context mContext;
+    private Player player = LoginActivity.getNewPlayer();
+
 
     public SellItemAdapter(ArrayList<String> Cargoitems, ArrayList<Integer> Cargoitemprice, Context mContext) {
         this.Cargoitems = Cargoitems;
@@ -45,7 +48,7 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
     @Override
     public void onBindViewHolder(@NonNull final BuyItemViewHolder holder, final int i) throws NullPointerException {
         Log.d("hello", "onBindViewHolder: called.") ;
-        holder.buyItemName.setText(Cargoitems.get(i));
+        holder.buyItemName.setText(Cargoitems.toString());
         holder.buyItemPrice.setText(Cargoitemprice.get(i).toString());
 
         holder.buyItemLayout.setOnClickListener(new View.OnClickListener()  {
@@ -57,25 +60,25 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
                 else {
                     try {
                         if (i >= Cargoitems.size()) {
-                            LoginActivity.getNewPlayer().sell(Cargoitems.get(0));
+                            sell(Cargoitems.get(0));
                             Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
-                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
+//                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
                             Cargoitems.remove(holder.getAdapterPosition());
                             notifyItemRemoved(holder.getAdapterPosition());
                             notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
                         } else {
                             GoodsList good = GoodsList.valueOf(Cargoitems.get(i));
-                            LoginActivity.getNewPlayer().sell(Cargoitems.get(i));
+                            sell(Cargoitems.get(i));
                             Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
-                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(i));
+//                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(i));
                             Cargoitems.remove(holder.getAdapterPosition());
                             notifyItemRemoved(holder.getAdapterPosition());
                             notifyItemRangeChanged(holder.getAdapterPosition(), Cargoitems.size());
                         }
                     } catch (NullPointerException e) {
-                        LoginActivity.getNewPlayer().sell(Cargoitems.get(0));
+                        sell(Cargoitems.get(0));
                         Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
-                        LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
+//                        LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
                         Cargoitems.remove(holder.getAdapterPosition());
                         notifyItemRemoved(holder.getAdapterPosition());
                         notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
@@ -91,6 +94,20 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
     @Override
     public int getItemCount() {
         return Cargoitems.size();
+    }
+
+    //can sell
+    public boolean canSell(GoodsList good) {
+        return true;
+    }
+
+
+    //the selling process
+    public boolean sell(String goodie) {
+        GoodsList goods = GoodsList.valueOf(goodie);
+        this.player.setCreditScore(player.getCreditScore() + goods.getPrice());
+        goods.setQuantity(goods.getQuantity() - 1);
+        return true;
     }
 
     public class BuyItemViewHolder extends RecyclerView.ViewHolder {

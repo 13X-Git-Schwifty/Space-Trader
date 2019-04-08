@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/launch_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".View.login2"></activity>
         <activity android:name=".View.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

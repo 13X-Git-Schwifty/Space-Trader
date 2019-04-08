@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.CurrentPlanetActivity">
+    tools:context=".View.CurrentPlanetActivity"
+    android:background="#000">
 
     <ImageView
         android:id="@+id/currPlanetIV"
         android:layout_width="303dp"
         android:layout_height="309dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="148dp"
         app:srcCompat="@drawable/planet1"
         tools:layout_editor_absoluteX="54dp"
         tools:layout_editor_absoluteY="199dp" />
@@ -26,17 +29,23 @@
         android:text="Travel"
         android:onClick="universe1"
         tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/emulogic"
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/planetName"
-        android:layout_width="217dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="157dp"
+        android:layout_marginTop="140dp"
         tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="135dp" />
+        tools:layout_editor_absoluteY="135dp"
+        android:text="1"
+        android:textColor="#fff"
+        android:fontFamily="@font/emulogic"/>
 
     <Button
         android:id="@+id/tradeButton"
@@ -48,7 +57,10 @@
         android:text="Trade"
         android:onClick="goToMarket"
         tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="503dp" />
+        tools:layout_editor_absoluteY="503dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/emulogic"
+        android:textColor="#000"/>
 
     <TextView
         android:id="@+id/planetInfo"
@@ -56,8 +68,30 @@
         android:layout_height="37dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="202dp"
+        android:layout_marginTop="167dp"
         tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="167dp" />
+        tools:layout_editor_absoluteY="167dp"
+        android:text="2"
+        android:textColor="#fff"
+        android:fontFamily="@font/emulogic"/>
+    <TextView
+        android:id="@+id/fuel"
+        android:layout_width="213dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="167dp"
+        android:text="3"
+        android:textColor="#fff"
+        android:fontFamily="@font/emulogic"/>
 
+    <TextView
+        android:id="@+id/creditScoreDisplay"
+        android:layout_width="213dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/emulogic"
+        android:text="4"
+        android:textColor="#fff" />
 </RelativeLayout>
