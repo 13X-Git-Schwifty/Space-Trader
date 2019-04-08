@@ -42,9 +42,9 @@ public class BuyItem extends AppCompatActivity {
     private void initItems() {
         Log.d(TAG, "initItems, preparing.");
         for (GoodsList item : GoodsList.values()) {
-            if ((com.gitschwifty.cs2340.gatech.space_trader.View.CurrentPlanetActivity.getCurrentPlanet().techLevel).equals(item.getMtlu())
-            || (com.gitschwifty.cs2340.gatech.space_trader.View.CurrentPlanetActivity.getCurrentPlanet().techLevel).equals(item.getMtlp())
-            || (com.gitschwifty.cs2340.gatech.space_trader.View.CurrentPlanetActivity.getCurrentPlanet().techLevel).equals(item.getTtp())){
+            if ((LoginActivity.getNewPlayer().getCurrPlanet().techLevel).equals(item.getMtlu())
+            || (LoginActivity.getNewPlayer().getCurrPlanet().techLevel).equals(item.getMtlp())
+            || (LoginActivity.getNewPlayer().getCurrPlanet().techLevel).equals(item.getTtp())){
                 mItemNames.add(item.toString());
                 mItemPrices.add((int) (Math.random()* 200));
             } else  {
@@ -68,10 +68,13 @@ public class BuyItem extends AppCompatActivity {
         public void updateInfo() {
             //creditScore
             TextView creditScoreTV = findViewById(R.id.creditScoreDisplay);
-            creditScoreTV.setText("Your credit score is: " + LoginActivity.getNewPlayer().getCreditScore());
+            String cred =  "Your credit score is: " + LoginActivity.getNewPlayer().getCreditScore();
+            creditScoreTV.setText(cred);
             //cargo space
             TextView cargoSpaceTV = findViewById(R.id.cargoSpaceDisplay);
-            cargoSpaceTV.setText("Remaingin cargo space is: " + (20 - LoginActivity.getNewPlayer().getPlayerGoods().size()));
+
+            String size = "Remaingin cargo space is: 20";
+            cargoSpaceTV.setText(size);
         }
 
 }

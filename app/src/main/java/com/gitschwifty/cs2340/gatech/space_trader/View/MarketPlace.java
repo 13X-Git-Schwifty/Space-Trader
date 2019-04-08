@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.gitschwifty.cs2340.gatech.space_trader.Model.CargoHold;
+import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
 public class MarketPlace extends AppCompatActivity {
@@ -30,4 +31,9 @@ public class MarketPlace extends AppCompatActivity {
 //        Intent intent = new Intent(MarketPlace.this,CargoHold.class);
 //        startActivity(intent);
 //    }
+
+    public void back(View v) {
+        Intent intent = new Intent(MarketPlace.this, CurrentPlanetActivity.class);
+        startActivity(intent);
+    }
 }

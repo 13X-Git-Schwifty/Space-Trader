@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.Player;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
@@ -23,7 +24,7 @@ public class Loader extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intent=new Intent(getApplicationContext(), PlayerActivity.class);
+                    Intent intent=new Intent(Loader.this, CurrentPlanetActivity.class);
                     intent.putExtra("extra", getIntent().getStringExtra("extra"));
                     startActivity(intent);
                     finish();
