@@ -51,7 +51,7 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/emulogic"
-        android:onClick="back"
+        android:onClick="goToMarketplace"
         android:text="Back"
         android:textColor="#000" />
 </RelativeLayout>

@@ -12,7 +12,9 @@ import com.gitschwifty.cs2340.gatech.space_trader.Model.SolarSystem;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 import com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter;
 
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BuyItem extends AppCompatActivity {
     private static final String TAG = "BuyItem";
@@ -46,7 +48,8 @@ public class BuyItem extends AppCompatActivity {
             || (LoginActivity.getNewPlayer().getCurrPlanet().techLevel).equals(item.getMtlp())
             || (LoginActivity.getNewPlayer().getCurrPlanet().techLevel).equals(item.getTtp())){
                 mItemNames.add(item.toString());
-                mItemPrices.add((int) (Math.random()* 200));
+                mItemPrices.add((int) (Math.random() * 200));
+
             } else  {
                 mItemNames.add(item.toString());
                 mItemPrices.add(0);
@@ -55,6 +58,7 @@ public class BuyItem extends AppCompatActivity {
         }
         initRecyclerView();
         }
+
 
         private void initRecyclerView() {
         Log.d(TAG, "initRecyclerView: init recyclerview");
@@ -73,7 +77,7 @@ public class BuyItem extends AppCompatActivity {
             //cargo space
             TextView cargoSpaceTV = findViewById(R.id.cargoSpaceDisplay);
 
-            String size = "Remaingin cargo space is: 20";
+            String size = "Remaining cargo space is: 20";
             cargoSpaceTV.setText(size);
         }
 

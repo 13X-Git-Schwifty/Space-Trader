@@ -3,6 +3,7 @@ package com.gitschwifty.cs2340.gatech.space_trader.View;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.gitschwifty.cs2340.gatech.space_trader.Model.CargoHold;
@@ -15,6 +16,7 @@ public class MarketPlace extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_place);
+        Log.d("mptest","created");
     }
 
     public void goToBuy(View v) {
@@ -27,13 +29,18 @@ public class MarketPlace extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToMarketplace(View v) {
+        Intent intent = new Intent(this, CurrentPlanetActivity.class);
+        startActivity(intent);
+    }
+
 //    public void goToCargo(View v) {
 //        Intent intent = new Intent(MarketPlace.this,CargoHold.class);
 //        startActivity(intent);
 //    }
 
     public void back(View v) {
-        Intent intent = new Intent(MarketPlace.this, CurrentPlanetActivity.class);
+        Intent intent = new Intent(this, CurrentPlanetActivity.class);
         startActivity(intent);
     }
 }
