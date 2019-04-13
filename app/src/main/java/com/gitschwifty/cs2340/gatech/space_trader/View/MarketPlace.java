@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.gitschwifty.cs2340.gatech.space_trader.Model.CargoHold;
-import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
+/**
+ * MarketPlace
+ */
 public class MarketPlace extends AppCompatActivity {
 
     @Override
@@ -19,16 +20,25 @@ public class MarketPlace extends AppCompatActivity {
         Log.d("mptest","created");
     }
 
+    /**
+     * @param v tag
+     */
     public void goToBuy(View v) {
         Intent intent = new Intent(MarketPlace.this,BuyItem.class);
         startActivity(intent);
     }
 
+    /**
+     * @param v tag
+     */
     public void goToSell(View v) {
         Intent intent = new Intent(MarketPlace.this,SellItem.class);
         startActivity(intent);
     }
 
+    /**
+     * @param v tag
+     */
     public void goToMarketplace(View v) {
         Intent intent = new Intent(this, CurrentPlanetActivity.class);
         startActivity(intent);
@@ -39,6 +49,9 @@ public class MarketPlace extends AppCompatActivity {
 //        startActivity(intent);
 //    }
 
+    /**
+     * @param v tag
+     */
     public void back(View v) {
         Intent intent = new Intent(this, CurrentPlanetActivity.class);
         startActivity(intent);

@@ -1,23 +1,19 @@
 package com.gitschwifty.cs2340.gatech.space_trader.ViewModel;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.SolarSystem;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
-import com.gitschwifty.cs2340.gatech.space_trader.View.CurrentPlanetActivity;
 import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
-import com.gitschwifty.cs2340.gatech.space_trader.View.SolarSystemActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,32 +21,36 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * MyAdapter
+ */
+@SuppressWarnings("ALL")
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List<SolarSystem> mDataset;
+    private final List<SolarSystem> mDataset;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
-        TextView name;
-        TextView coord;
-        TextView fuel;
-        ImageView personPhoto;
-        CardView c;
+        final TextView name;
+        final TextView coord;
+        final TextView fuel;
+        final ImageView personPhoto;
+        final CardView c;
 
-        public MyViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
-            name = (TextView)itemView.findViewById(R.id.txtName);
-            coord = (TextView)itemView.findViewById(R.id.txtDistance);
-            personPhoto = (ImageView)itemView.findViewById(R.id.img);
-            fuel = (TextView) itemView.findViewById(R.id.txtFuel);
+            name = itemView.findViewById(R.id.txtName);
+            coord = itemView.findViewById(R.id.txtDistance);
+            personPhoto = itemView.findViewById(R.id.img);
+            fuel = itemView.findViewById(R.id.txtFuel);
             c = itemView.findViewById(R.id.card);
         }
     }
 
+    /**
+     * @param myDataset tag
+     */
     public MyAdapter(List<SolarSystem> myDataset) {
         mDataset = myDataset;
     }
@@ -63,6 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     }
 
+    @SuppressLint({"RecyclerView", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, final int i) {
         if (!mDataset.get(i).name.equals(LoginActivity.getNewPlayer().currentPlanet.name)) {

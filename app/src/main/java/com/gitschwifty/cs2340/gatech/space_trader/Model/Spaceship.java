@@ -1,5 +1,9 @@
 package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
+/**
+ * Spaceship
+ */
+@SuppressWarnings("ALL")
 public enum Spaceship {
     FLEA("Flea",100,20,100,8,0,0,0,2000,0),
     GNAT("Gnat",30,14,250,15,1,0,1,5000,0),
@@ -10,7 +14,7 @@ public enum Spaceship {
     HORNET("Hornet",120,16,500,20,3,2,1,25000,2),
     GRASSHOPPER("Grasshopper",120,15,400,30,2,2,3,30000,3),
     TERMITE("Termite",150,13,800,60,1,3,2,45000,3),
-    WASP("Wasp",150,14,800,35,3,2,2,55000,3);
+   WASP("Wasp",150,14,800,35,3,2,2,55000,3);
 
 
     //name of ship, the total fuel capacity,
@@ -33,7 +37,7 @@ public enum Spaceship {
     }
     Spaceship() {this.name = name;}
 
-    public String name;
+    private String name;
     private int fuelCapacity;
     private int fuelDistance;
     private int health;
@@ -44,46 +48,79 @@ public enum Spaceship {
     private int price;
     private int maxCrew;
 
+    /**
+     * @return getFuelCapacity
+     */
     public int getFuelCapacity() {
         return fuelCapacity;
     }
 
+    /**
+     * @return getFuelDistance
+     */
     public int getFuelDistance() {
         return fuelDistance;
     }
 
+    /**
+     * @return getHealth
+     */
     public int getHealth() {
         return health;
     }
 
+    /**
+     * @return getMaxCargo
+     */
     public int getMaxCargo() {
         return maxCargo;
     }
 
+    /**
+     * @return getMaxGadgets
+     */
     public int getMaxGadgets() {
         return maxGadgets;
     }
 
+    /**
+     * @return getMaxShields
+     */
     public int getMaxShields() {
         return maxShields;
     }
 
+    /**
+     * @return getMaxWeapons
+     */
     public int getMaxWeapons() {
         return maxWeapons;
     }
 
+    /**
+     * @return getPrice
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     * @param price tag
+     */
     public void setPrice(int price) {
         this.price = price;
     }
 
+    /**
+     * @return maxCrew
+     */
     public int getMaxCrew() {
         return maxCrew;
     }
 
+    /**
+     * @return name
+     */
     public String getName() {
         return name;
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.PlayerActivity"
-    android:background="#000">
+    android:background="#000"
+    tools:ignore="Overdraw">
 
     <RelativeLayout
         android:layout_width="350dp"
@@ -27,21 +27,21 @@
             android:fontFamily="@font/emulogic"
             android:text="default"
             android:textColor="#000"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            tools:ignore="HardcodedText" />
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/emulogic"
         android:onClick="goToCurr"
         android:text="Generate Universe"
         android:padding="10dp"
-        android:textColor="#000" />
+        android:textColor="#000"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>

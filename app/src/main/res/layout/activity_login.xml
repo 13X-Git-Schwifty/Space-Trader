@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.LoginActivity"
-    android:background="#000">
+    android:background="#000"
+    tools:ignore="Overdraw">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,8 +15,8 @@
         android:text="Welcome fellow Space Traders!"
         android:textAlignment="center"
         android:textColor="#fff"
-        android:textSize="15dp"
-        android:id="@+id/et"/>
+        android:textSize="15sp"
+        tools:ignore="HardcodedText" />
 
 
 
@@ -39,7 +39,8 @@
             android:inputType="text"
             android:textAlignment="center"
             android:fontFamily="@font/emulogic"
-            android:textSize="4pt"/>
+            android:textSize="4pt"
+            tools:ignore="HardcodedText,RtlHardcoded" />
 
         <EditText
             android:id="@+id/password"
@@ -52,7 +53,8 @@
             android:inputType="textVisiblePassword"
             android:textAlignment="center"
             android:fontFamily="@font/emulogic"
-            android:textSize="4pt"/>
+            android:textSize="4pt"
+            tools:ignore="HardcodedText,RtlHardcoded" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +66,6 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/start"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -73,10 +74,10 @@
             android:fontFamily="@font/emulogic"
             android:onClick="start"
             android:text="Start Game"
-            android:textColor="#000" />
+            android:textColor="#000"
+            tools:ignore="ButtonStyle,HardcodedText" />
 
         <Button
-            android:id="@+id/end"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -85,7 +86,8 @@
             android:fontFamily="@font/emulogic"
             android:onClick="end"
             android:text="End Game"
-            android:textColor="#000" />
+            android:textColor="#000"
+            tools:ignore="ButtonStyle,HardcodedText" />
     </LinearLayout>
 
 </RelativeLayout>

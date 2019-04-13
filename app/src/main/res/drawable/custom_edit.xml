@@ -3,9 +3,10 @@
     <item>
         <shape>
             <solid android:color="@color/colorPrimary"/>
-            <corners android:radius="5dp"></corners>
-            <gradient android:startColor="#fff" android:centerColor="#fff" android:endColor="#fff"></gradient>
-            <stroke android:width="5dp" android:color="#fff"></stroke>
+            <corners android:radius="5dp" />
+            <gradient android:startColor="#fff" android:centerColor="#fff"
+                android:endColor="#fff" />
+            <stroke android:width="5dp" android:color="#fff" />
         </shape>
     </item>
 </selector>

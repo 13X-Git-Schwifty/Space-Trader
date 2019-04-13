@@ -2,31 +2,41 @@ package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
+/**
+ * CargoHold
+ */
 public class CargoHold extends AppCompatActivity{
-    public CargoHold() {
-    }
 
+    /**
+     * @param goodsList tag
+     */
     public static void add(GoodsList goodsList) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        ref.child("players").child(LoginActivity.getNewPlayer().getUID()).child("goods").child(goodsList.toString()).push().setValue(goodsList);
+        ref.child("players").child(LoginActivity.getNewPlayer().getUID()).child("goods").
+                child(goodsList.toString()).push().setValue(goodsList);
     }
 
+    /**
+     * @param goodsList tag
+     */
     public void remove(GoodsList goodsList) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        ref.child("players").child(LoginActivity.getNewPlayer().getUID()).child("goods").child(goodsList.toString()).removeValue();
+        ref.child("players").child(LoginActivity.getNewPlayer().getUID()).child("goods").
+                child(goodsList.toString()).removeValue();
     }
-//    public int getSize() {
-//        return toDisplay.size();
-//    }
+
+    /**
+     * @return getSize
+     */
+    public int getSize() {
+        return toDisplay.size();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

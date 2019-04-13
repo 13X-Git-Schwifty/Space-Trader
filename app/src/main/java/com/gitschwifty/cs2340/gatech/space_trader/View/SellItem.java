@@ -6,10 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.gitschwifty.cs2340.gatech.space_trader.Model.GoodsList;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 import com.gitschwifty.cs2340.gatech.space_trader.ViewModel.SellItemAdapter;
-import com.gitschwifty.cs2340.gatech.space_trader.View.BuyItem;
 
 
 import java.util.ArrayList;
@@ -17,6 +15,7 @@ import java.util.Arrays;
 
 import static com.gitschwifty.cs2340.gatech.space_trader.View.BuyItem.*;
 
+@SuppressWarnings("ALL")
 public class SellItem extends AppCompatActivity {
 
     ArrayList<String> itemNames = getmItemNames();
@@ -25,6 +24,7 @@ public class SellItem extends AppCompatActivity {
 
     ArrayList<Integer> itemPrices = getmItemPrices();
     ArrayList<String> cargoItems = com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter.getCargoItems();
+    @SuppressWarnings("CollectionDeclaredAsConcreteClass")
     ArrayList<Integer> cargoItemsPrice = com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter.getCargoItemPrice();
 
 

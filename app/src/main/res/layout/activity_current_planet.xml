@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.CurrentPlanetActivity"
-    android:background="#000">
+    android:background="#000"
+    tools:ignore="Overdraw">
 
     <ImageView
         android:id="@+id/currPlanetIV"
@@ -17,10 +18,10 @@
         android:layout_marginBottom="148dp"
         app:srcCompat="@drawable/planet1"
         tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="199dp" />
+        tools:layout_editor_absoluteY="199dp"
+        android:contentDescription="TODO" />
 
     <Button
-        android:id="@+id/travelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -32,7 +33,8 @@
         tools:layout_editor_absoluteY="16dp"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/emulogic"
-        android:textColor="#000"/>
+        android:textColor="#000"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/planetName"
@@ -45,10 +47,10 @@
         tools:layout_editor_absoluteY="135dp"
         android:text="1"
         android:textColor="#fff"
-        android:fontFamily="@font/emulogic"/>
+        android:fontFamily="@font/emulogic"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/tradeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -60,7 +62,8 @@
         tools:layout_editor_absoluteY="503dp"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/emulogic"
-        android:textColor="#000"/>
+        android:textColor="#000"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/planetInfo"
@@ -73,7 +76,8 @@
         tools:layout_editor_absoluteY="167dp"
         android:text="2"
         android:textColor="#fff"
-        android:fontFamily="@font/emulogic"/>
+        android:fontFamily="@font/emulogic"
+        tools:ignore="HardcodedText" />
     <TextView
         android:id="@+id/fuel"
         android:layout_width="213dp"
@@ -85,7 +89,8 @@
         tools:layout_editor_absoluteY="167dp"
         android:text="3"
         android:textColor="#fff"
-        android:fontFamily="@font/emulogic"/>
+        android:fontFamily="@font/emulogic"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/creditScoreDisplay"
@@ -93,5 +98,6 @@
         android:layout_height="37dp"
         android:fontFamily="@font/emulogic"
         android:text="4"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>

@@ -1,24 +1,29 @@
 package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
 
-import android.widget.ImageView;
+import android.support.annotation.NonNull;
 
-import com.gitschwifty.cs2340.gatech.space_trader.R;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * CurrentPlanet
+ */
+@SuppressWarnings("ALL")
 public class CurrentPlanet {
-        public String name;
-        public Coordinate c;
-        public TechLevel techLevel;
-        public Resources res;
-        public int imagePath;
-        public int ordinal;
-        public List<SolarSystem> planets = Arrays.asList(SolarSystem.values());
-        public SolarSystem s;
+        public final String name;
+        public final Coordinate c;
+        public final TechLevel techLevel;
+        private final Resources res;
+        public final int imagePath;
+        private int ordinal;
+        private final List<SolarSystem> planets = Arrays.asList(SolarSystem.values());
+        public final SolarSystem s;
+
+    /**
+     * @param ordinal tag
+     */
         public CurrentPlanet(int ordinal) {
             this.s = planets.get(ordinal);
             this.name = planets.get(ordinal).name;
@@ -30,14 +35,22 @@ public class CurrentPlanet {
         CurrentPlanet() {
             this(new Random().nextInt(10));
         }
+
+    /**
+     * @return ordinal
+     */
     public int getOrdinal() {
         return ordinal;
     }
 
+    /**
+     * @return s
+     */
     public SolarSystem getS() {
         return s;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return name;

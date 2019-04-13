@@ -8,29 +8,38 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.gitschwifty.cs2340.gatech.space_trader.Model.GoodsList;
-import com.gitschwifty.cs2340.gatech.space_trader.Model.SolarSystem;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 import com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter;
 
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Collections;
+import java.util.List;
 
+/**
+ *
+ */
+@SuppressWarnings("ALL")
 public class BuyItem extends AppCompatActivity {
     private static final String TAG = "BuyItem";
     private static final int PRICE_DET = 200;
 
-    public static ArrayList<String> getmItemNames() {
-        return mItemNames;
+    /**
+     * @return mItemNames
+     */
+    public static List<String> getmItemNames() {
+        return Collections.unmodifiableList(mItemNames);
     }
 
-    public static ArrayList<Integer> getmItemPrices() {
-        return mItemPrices;
+    /**
+     * @return mItemPrices
+     */
+    public static List<Integer> getmItemPrices() {
+        return Collections.unmodifiableList(mItemPrices);
     }
 
     //vars
-    private static ArrayList<String> mItemNames = new ArrayList<>();
-    private static ArrayList<Integer> mItemPrices = new ArrayList<>();
+    private static final ArrayList<String> mItemNames = new ArrayList<>();
+    private static final ArrayList<Integer> mItemPrices = new ArrayList<>();
 
 
     @Override
@@ -70,7 +79,7 @@ public class BuyItem extends AppCompatActivity {
 
         }
 
-        public void updateInfo() {
+        private void updateInfo() {
             //creditScore
             TextView creditScoreTV = findViewById(R.id.creditScoreDisplay);
             String cred =  "Your credit score is: " + LoginActivity.getNewPlayer().getCreditScore();

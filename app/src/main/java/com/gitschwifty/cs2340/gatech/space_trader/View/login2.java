@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.Difficulty;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.NewUser;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.Player;
@@ -19,10 +18,15 @@ import com.gitschwifty.cs2340.gatech.space_trader.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * login2
+ */
+@SuppressWarnings("ALL")
 public class login2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    public static Player newPlayer;
-    public String name, password;
-    int pilot;
+    private static Player newPlayer;
+    private String name;
+    private String password;
+    private int pilot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,30 +35,34 @@ public class login2 extends AppCompatActivity implements AdapterView.OnItemSelec
         Intent intent = getIntent();
         name = intent.getStringExtra("Name");
         password = intent.getStringExtra("Password");
-        List<Object> categories = new ArrayList<Object>();
+        List<Object> categories = new ArrayList<>();
         categories.add(Difficulty.BEGINNER);
         categories.add(Difficulty.EASY);
         categories.add(Difficulty.NORMAL);
         categories.add(Difficulty.HARD);
         categories.add(Difficulty.IMPOSSIBLE);
         // Spinner element
-        Spinner spinner = (Spinner) findViewById(R.id.difficulty);
+        Spinner spinner = findViewById(R.id.difficulty);
         // Spinner click listener
         spinner.setOnItemSelectedListener(this);
         // Creating adapter for spinner
-        ArrayAdapter<Object> dataAdapter = new ArrayAdapter<Object>(this, android.R.layout.simple_spinner_item, categories);
+        ArrayAdapter<Object> dataAdapter = new ArrayAdapter<>(this, android.R.layout.
+                simple_spinner_item, categories);
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
     }
 
+    /**
+     * @param v tag
+     */
     public void signup(View v) {
-        EditText et = (EditText) findViewById(R.id.pilot);
-        EditText et1 = (EditText) findViewById(R.id.fighter);
-        EditText et2 = (EditText) findViewById(R.id.trader);
-        EditText et3 = (EditText) findViewById(R.id.engineer);
-        Spinner spinner = (Spinner) findViewById(R.id.difficulty);
+        EditText et = findViewById(R.id.pilot);
+        EditText et1 = findViewById(R.id.fighter);
+        EditText et2 = findViewById(R.id.trader);
+        EditText et3 = findViewById(R.id.engineer);
+        Spinner spinner = findViewById(R.id.difficulty);
         Difficulty diffLevel = Difficulty.valueOf(spinner.getSelectedItem().toString());
         String p = et.getText().toString();
         String f = et1.getText().toString();
@@ -68,14 +76,17 @@ public class login2 extends AppCompatActivity implements AdapterView.OnItemSelec
             int trader = Integer.parseInt(t);
             int engineer = Integer.parseInt(e);
 
-            if (pilot + fighter + trader + engineer != 16) {
-                Toast.makeText(login2.this, "Skill Distribution Error! Skills should add up to 16.", Toast.LENGTH_SHORT).show();
+            if ((pilot + fighter + trader + engineer) != 16) {
+                Toast.makeText(login2.this, "Skill Distribution Error! Skills should" +
+                        " add up to 16.", Toast.LENGTH_SHORT).show();
             } else {
                 String random = java.util.UUID.randomUUID().toString();
-                newPlayer = new Player(random, name, pilot, fighter, trader, engineer, diffLevel, password);
+                newPlayer = new Player(random, name, pilot, fighter, trader, engineer, diffLevel,
+                        password);
                 LoginActivity.setNewPlayer(newPlayer);
                 NewUser newUser = new NewUser();
-                newUser.writeNewUser(random, name, pilot, fighter, trader, engineer, diffLevel, password, newPlayer.currentPlanet, newPlayer.currShip);
+                newUser.writeNewUser(random, name, pilot, fighter, trader, engineer, diffLevel,
+                        password, newPlayer.currentPlanet, newPlayer.currShip);
                 Intent intent = new Intent(login2.this, Loader.class);
                 intent.putExtra("extra", newPlayer.toString());
                 startActivity(intent);
@@ -85,10 +96,7 @@ public class login2 extends AppCompatActivity implements AdapterView.OnItemSelec
     }
 
     private boolean isEmpty(EditText etText) {
-        if (etText.getText().toString().trim().length() > 0)
-            return false;
-
-        return true;
+        return etText.getText().toString().trim().length() <= 0;
     }
 
     @Override

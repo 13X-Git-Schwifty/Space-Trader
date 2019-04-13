@@ -1,33 +1,38 @@
 package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
-import android.support.annotation.NonNull;
+import android.annotation.SuppressLint;
 import android.util.Log;
 
-import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Player
+ */
+@SuppressWarnings("ALL")
 public class Player {
-    public String playerName;
-    public int skillPilot;
-    public int skillFighter;
-    public int skillEngineer;
-    public int skillTrader;
-    public Difficulty diffLevel;
-    public static int creditScore;
+    private String playerName;
+    private int skillPilot;
+    private int skillFighter;
+    private int skillEngineer;
+    private int skillTrader;
+    private Difficulty diffLevel;
+    private static int creditScore;
     public Ship currShip;
     public int totalPoints;
     public CurrentPlanet currentPlanet;
-    public String password;
-    public String uid;
+    private String password;
+    private String uid;
 
+    /**
+     * @param uid
+     * @param name
+     * @param skillPilot
+     * @param skillFighter
+     * @param skillTrader
+     * @param skillEngineer
+     * @param diffLevel
+     * @param password
+     */
     public Player(String uid, String name, int skillPilot, int skillFighter, int skillTrader, int skillEngineer, Difficulty diffLevel, String password) {
         this.playerName = name;
         this.skillPilot = skillPilot;
@@ -42,6 +47,19 @@ public class Player {
         this.password = password;
         this.uid = uid;
     }
+
+    /**
+     * @param uid
+     * @param name
+     * @param skillPilot
+     * @param skillFighter
+     * @param skillTrader
+     * @param skillEngineer
+     * @param diffLevel
+     * @param password
+     * @param planet
+     * @param currShip
+     */
     public Player(String uid, String name, int skillPilot, int skillFighter, int skillTrader, int skillEngineer, Difficulty diffLevel, String password, CurrentPlanet planet, Ship currShip) {
         this.playerName = name;
         this.skillPilot = skillPilot;
@@ -60,6 +78,7 @@ public class Player {
     Player() {
 
     }
+    @SuppressLint("DefaultLocale")
     @Override
     public String toString() {
         return String.format("Player %s has been created! Your skills are:\n" +
@@ -70,45 +89,60 @@ public class Player {
 
     }
 
+    /**
+     * @return currentPlanet
+     */
     public CurrentPlanet getCurrPlanet() {
         return currentPlanet;
     }
 
+    /**
+     * @param currPlanet
+     */
     public void setCurrPlanet(CurrentPlanet currPlanet) {
         this.currentPlanet = currPlanet;
     }
-    public int getSkillPilot() {
+    private int getSkillPilot() {
         return skillPilot;
     }
 
-    public int getSkillFighter() {
+    private int getSkillFighter() {
         return skillFighter;
     }
 
-    public int getSkillTrader() {
+    private int getSkillTrader() {
         return skillTrader;
     }
 
-    public int getSkillEngineer() {
+    private int getSkillEngineer() {
         return skillEngineer;
     }
 
-    public String getName() {
+    private String getName() {
         return playerName;
     }
 
-    public Difficulty getDiffLevel() {
+    private Difficulty getDiffLevel() {
         return diffLevel;
     }
 
+    /**
+     * @return creditScore
+     */
     public int getCreditScore() {
         return creditScore;
     }
 
+    /**
+     * @return getSpaceship
+     */
     public Ship getSpaceship() {
         return currShip;
     }
 
+    /**
+     * @return getUID
+     */
     //    public void setCargoSpace(int cargoSpace) {
 //        this.cargoSpace = cargoSpace;
 //    }
@@ -116,6 +150,9 @@ public class Player {
         return uid;
     }
 
+    /**
+     * @param creditScore
+     */
     public void setCreditScore(final int creditScore) {
         this.creditScore = creditScore;
 //        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("players");
@@ -132,6 +169,9 @@ public class Player {
 //        });
     }
 
+    /**
+     * @param uid
+     */
     public void setUid(String uid) {
         this.uid = uid;
     }

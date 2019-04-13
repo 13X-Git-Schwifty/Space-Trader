@@ -11,10 +11,10 @@ import com.gitschwifty.cs2340.gatech.space_trader.Model.CargoHold;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.Coordinate;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
 
 
 //JUnit written by Riya Agrawal
+@SuppressWarnings("ALL")
 public class CoordinateTests {
     Coordinate Coordinate1;
     Coordinate Coordinate2;

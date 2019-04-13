@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:src="@drawable/planet1"
-            android:id="@+id/img"/>
+            android:id="@+id/img"
+            android:contentDescription="TODO" />
         <TextView
             android:id="@+id/txtName"
             android:layout_width="match_parent"
@@ -26,21 +26,24 @@
             android:padding="1dp"
             android:textColor="#000"
             android:textSize="18sp"
-            android:text="Name: "/>
+            android:text="Name: "
+            tools:ignore="HardcodedText" />
         <TextView
             android:id="@+id/txtDistance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="1dp"
             android:textColor="#000"
-            android:text="X: Y: "/>
+            android:text="X: Y: "
+            tools:ignore="HardcodedText" />
         <TextView
             android:id="@+id/txtFuel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="1dp"
             android:textColor="#000"
-            android:text="Fuel Needed: "/>
+            android:text="Fuel Needed: "
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 </android.support.v7.widget.CardView>

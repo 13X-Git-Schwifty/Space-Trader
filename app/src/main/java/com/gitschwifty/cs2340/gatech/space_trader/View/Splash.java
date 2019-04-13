@@ -7,12 +7,17 @@ import android.os.Bundle;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
 
+/**
+ * Splash
+ */
+@SuppressWarnings("ALL")
 public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Thread sleep=new Thread(){
+            @Override
             public void run()
             {
                 try{

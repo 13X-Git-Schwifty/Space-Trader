@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
-import com.gitschwifty.cs2340.gatech.space_trader.Model.Player;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
 
+/**
+ * Loader
+ */
+@SuppressWarnings("ALL")
 public class Loader extends AppCompatActivity {
 
     @Override
@@ -15,6 +17,8 @@ public class Loader extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loader);
         Thread sleep=new Thread(){
+            @Override
+            @SuppressWarnings("MagicNumber")
             public void run()
             {
                 try{

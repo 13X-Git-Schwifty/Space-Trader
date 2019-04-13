@@ -2,10 +2,9 @@ package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
-import com.gitschwifty.cs2340.gatech.space_trader.View.SolarSystemActivity;
+import com.gitschwifty.cs2340.gatech.space_trader.Model.Spaceship;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,8 +15,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
+@SuppressWarnings("ALL")
 public class Ship {
 
     private Spaceship shipType;
@@ -28,8 +27,8 @@ public class Ship {
 
     Ship (Spaceship shipType, SolarSystem currSystem) {
         this.shipType = shipType;
-        currFuel = shipType.getFuelcapacity();
-        currCargoSpace = shipType.getMaxcargo();
+        currFuel = shipType.getFuelCapacity();
+        currCargoSpace = shipType.getMaxCargo();
         this.inventory = null;
         this.currSystem = currSystem;
     }
@@ -38,7 +37,7 @@ public class Ship {
 
     }
     public boolean hasSpace() {
-        return shipType.getMaxcargo() - inventory.size() > 0;
+        return shipType.getMaxCargo() - inventory.size() > 0;
     }
 
     public HashMap<GoodsList, Integer> getInventory() {
@@ -63,9 +62,9 @@ public class Ship {
 
 
     public List findAccessibleSystems() {
-        ArrayList<SolarSystem> possDest = new ArrayList<>();
+        List<SolarSystem> possDest = new ArrayList<>();
         Coordinate currLoc = currSystem.location;
-        int travelDist = currFuel * this.getShipType().getFueldistance();
+        int travelDist = currFuel * this.getShipType().getFuelDistance();
         for (SolarSystem ss : SolarSystem.values()) {
             if (Coordinate.distance(currLoc,ss.location) <= travelDist && Coordinate.distance(currLoc,ss.location) != 0) {
                 possDest.add(ss);
@@ -75,7 +74,7 @@ public class Ship {
     }
 
     public int costTravel(SolarSystem s) {
-        int efficiency = this.getShipType().getFueldistance();
+        int efficiency = this.getShipType().getFuelDistance();
         int dist = Coordinate.distance(currSystem.location, s.location);
         int cost = dist/efficiency;
         return cost;

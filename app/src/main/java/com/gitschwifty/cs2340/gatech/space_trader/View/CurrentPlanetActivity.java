@@ -1,8 +1,7 @@
 package com.gitschwifty.cs2340.gatech.space_trader.View;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,21 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gitschwifty.cs2340.gatech.space_trader.Model.CurrentPlanet;
-import com.gitschwifty.cs2340.gatech.space_trader.Model.GoodsList;
 import com.gitschwifty.cs2340.gatech.space_trader.Model.Player;
-import com.gitschwifty.cs2340.gatech.space_trader.Model.SolarSystem;
 import com.gitschwifty.cs2340.gatech.space_trader.R;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
+/**
+ * CurrentPlanetActivity
+ */
 public class CurrentPlanetActivity extends AppCompatActivity {
     static CurrentPlanet currentPlanet;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,12 +76,19 @@ public class CurrentPlanetActivity extends AppCompatActivity {
 //            }
 //        });
     }
+
+    /**
+     * @param v tag
+     */
     public void universe1(View v) {
         Intent intent = new Intent(CurrentPlanetActivity.this, SolarSystemActivity.class);
         startActivity(intent);
         finishAndRemoveTask();
     }
 
+    /**
+     * @param v tag
+     */
     public void goToMarket(View v) {
         Intent intent = new Intent(CurrentPlanetActivity.this, MarketPlace.class);
         startActivity(intent);

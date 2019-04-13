@@ -1,5 +1,10 @@
 package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
+import android.support.annotation.NonNull;
+
+/**
+ * Resources
+ */
 public enum Resources {
     MINERALRICH("Mineral-Rich"),
     MINERALPOOR("Mineral-Poor"),
@@ -14,11 +19,12 @@ public enum Resources {
     ARTISTIC("Artistic"),
     WARLIKE("Warlike");
 
-    String name;
+    final String name;
     Resources(String name) {
         this.name = name;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return name;

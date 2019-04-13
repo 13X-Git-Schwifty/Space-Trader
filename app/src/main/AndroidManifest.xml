@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.gitschwifty.cs2340.gatech.space_trader">
 
     <application
@@ -9,27 +11,39 @@
         android:roundIcon="@mipmap/launch_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.login2"></activity>
-        <activity android:name=".View.Splash">
+        <activity android:name=".View.login2"
+            tools:ignore="InnerclassSeparator"></activity>
+        <activity android:name=".View.Splash"
+            tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Model.Difficulty" />
-        <activity android:name=".View.LoginActivity" />
-        <activity android:name=".View.Loader" />
-        <activity android:name=".View.PlayerActivity" />
-        <activity android:name=".View.SolarSystemActivity" />
-        <activity android:name=".View.CurrentPlanetActivity" />
-        <activity android:name=".View.MarketPlace" />
+        <activity android:name=".Model.Difficulty"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.LoginActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.Loader"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.PlayerActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.SolarSystemActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.CurrentPlanetActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.MarketPlace"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Model.CargoHold"
             android:label="@string/title_activity_cargo_hold"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".View.BuyItem" />
-        <activity android:name=".View.SellItem" />
+            android:theme="@style/AppTheme"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.BuyItem"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".View.SellItem"
+            tools:ignore="InnerclassSeparator" />
     </application>
 
 </manifest>

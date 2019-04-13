@@ -1,5 +1,9 @@
 package com.gitschwifty.cs2340.gatech.space_trader.Model;
 
+/**
+ *
+ */
+@SuppressWarnings("ALL")
 public enum GoodsList {
     WATER("Water", TechLevel.PRE_AGRICULTURE, TechLevel.PRE_AGRICULTURE, TechLevel.MEDIEVAL, 30, 3, 4, Resources.LOTSOFWATER, Resources.DESERT, 30, 50),
     FURS("Furs", TechLevel.PRE_AGRICULTURE, TechLevel.PRE_AGRICULTURE, TechLevel.PRE_AGRICULTURE, 250, 10, 10, Resources.RICHFAUNA, Resources.LIFELESS, 230, 280),
@@ -13,7 +17,7 @@ public enum GoodsList {
     ROBOTS("Robots", TechLevel.POST_INDUSTRIAL, TechLevel.EARLY_INDUSTRIAL, TechLevel.HI_TECH, 5000, -150, 100, null, null, 3500, 5000);
 
 
-    private String name;
+    private final String name;
     private TechLevel mtlp; //minimum tech level to produce good
     private TechLevel mtlu; //minimum tech level to use good
     private TechLevel ttp; //tech level which produces the most of good
@@ -41,126 +45,229 @@ public enum GoodsList {
         this.mth = mth;
         quantity = 0;
     }
-    GoodsList(String name) {
-        this.name = name;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    GoodsList(String name) {
+//        this.name = name;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
 
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return name
+//     */
+//    public String getName() {
+//        return name;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public String getName() {
-        return name;
-    }
-
+    /**
+     * @return mtlp
+     */
     public TechLevel getMtlp() {
         return mtlp;
     }
 
+    /**
+     * @return mtlu
+     */
     public TechLevel getMtlu() {
         return mtlu;
     }
 
+    /**
+     * @return ttp
+     */
     public TechLevel getTtp() {
         return ttp;
     }
 
-    public int getBase() {
-        return base;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return base
+//     */
+//    public int getBase() {
+//        return base;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public int getIpl() {
-        return ipl;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return ipl
+//     */
+//    public int getIpl() {
+//        return ipl;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public int getVar() {
-        return var;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return var
+//     */
+//    public int getVar() {
+//        return var;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public int getMtl() {
-        return mtl;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return mtl
+//     */
+//    public int getMtl() {
+//        return mtl;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public int getMth() {
-        return mth;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return mth
+//     */
+//    public int getMth() {
+//        return mth;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
+    /**
+     * @return quantity
+     */
     public int getQuantity() {
         return quantity;
     }
 
-    public Resources getCr() {
-        return cr;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return cr
+//     */
+//    public Resources getCr() {
+//        return cr;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public Resources getEr() {
-        return er;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @return er
+//     */
+//    public Resources getEr() {
+//        return er;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public int getBasePrice(TechLevel tl) {
-        return base + ipl * tl.compareTo(TechLevel.PRE_AGRICULTURE);
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @param tl tag
+//     * @return base
+//     */
+//    public int getBasePrice(TechLevel tl) {
+//        return base + ipl * tl.compareTo(TechLevel.PRE_AGRICULTURE);
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
+    /**
+     * @param price tag
+     */
     public void setPrice(int price) {
         this.price = price;
     }
-    public int specialResources(Resources resource, int baseprice) {
-        if (cr != null) {
-            if (resource.equals(cr)) {
-                baseprice *= 3;
-                baseprice /= 4;
-            }
-        }
-        if (er != null) {
-            if (resource.equals(er)) {
-                baseprice *= 4;
-                baseprice /= 3;
-            }
-        }
-        return baseprice;
-    }
+
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @param resource tag
+//     * @param baseprice tag
+//     * @return specialResources
+//     */
+//    public int specialResources(Resources resource, int baseprice) {
+//        if (cr != null) {
+//            if (resource.equals(cr)) {
+//                baseprice *= 3;
+//                baseprice /= 4;
+//            }
+//        }
+//        if (er != null) {
+//            if (resource.equals(er)) {
+//                baseprice *= 4;
+//                baseprice /= 3;
+//            }
+//        }
+//        return baseprice;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
 
-    public int randomizePrice(int baseprice) {
-        baseprice += (int) (Math.random() * var);
-        baseprice -= (int) (Math.random() * var);
-        return baseprice;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @param baseprice tag
+//     * @return randomizePrice
+//     */
+//    public int randomizePrice(int baseprice) {
+//        baseprice += (int) (Math.random() * var);
+//        baseprice -= (int) (Math.random() * var);
+//        return baseprice;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public int sellPrice(int buyprice, int traderskill) {
-        return buyprice * (103 + (16 - traderskill)) / 100;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @param buyprice tag
+//     * @param traderskill tag
+//     * @return sellPrice
+//     */
+//    public int sellPrice(int buyprice, int traderskill) {
+//        return buyprice * (103 + (16 - traderskill)) / 100;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public boolean canSell(TechLevel soltech) {
-        return soltech.compareTo(mtlp) >= 0;
-    }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @param soltech tag
+//     * @return canSell
+//     */
+//    public boolean canSell(TechLevel soltech) {
+//        return soltech.compareTo(mtlp) >= 0;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-    public int calculateQuantity(TechLevel soltech, int size, Resources resource) {
-        int quantity = 9 + ((int) (5 * Math.random())) - Math.abs(ttp.compareTo(soltech)) * (1 + size);
-        if (name.equals("Robots") || name.equals("Narcotics")) {
-            quantity *= 5;
-            quantity /= 6;
-            quantity += 1;
-        }
-        if (resource != null && resource.equals(cr)) {
-            quantity *= 4;
-            quantity /= 3;
-        }
-        if (er != null &&resource.equals(er)) {
-            quantity *= 3;
-            quantity /= 4;
-        }
+// --Commented out by Inspection START (4/13/19, 5:16 PM):
+//    /**
+//     * @param soltech tag
+//     * @param size tag
+//     * @param resource tag
+//     * @return calculateQuantity
+//     */
+//    public int calculateQuantity(TechLevel soltech, int size, Resources resource) {
+//        int quantity = 9 + ((int) (5 * Math.random())) - Math.abs(ttp.compareTo(soltech)) * (1 + size);
+//        if (name.equals("Robots") || name.equals("Narcotics")) {
+//            quantity *= 5;
+//            quantity /= 6;
+//            quantity += 1;
+//        }
+//        if (resource != null && resource.equals(cr)) {
+//            quantity *= 4;
+//            quantity /= 3;
+//        }
+//        if (er != null && Objects.requireNonNull(resource).equals(er)) {
+//            quantity *= 3;
+//            quantity /= 4;
+//        }
+//
+//        quantity += (int) (10 * Math.random());
+//        quantity -= (int) (10 * Math.random());
+//        if (quantity < 0) {
+//            quantity = 0;
+//        }
+//        return quantity;
+//    }
+// --Commented out by Inspection STOP (4/13/19, 5:16 PM)
 
-        quantity += (int) (10 * Math.random());
-        quantity -= (int) (10 * Math.random());
-        if (quantity < 0) {
-            quantity = 0;
-        }
-        return quantity;
-    }
-
+    /**
+     * @param quantity tag
+     */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
+    /**
+     * @return price
+     */
     public int getPrice() {
         return price;
     }

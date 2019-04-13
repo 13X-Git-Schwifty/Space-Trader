@@ -12,7 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/buy_item_recycler_view"
         android:layout_marginTop="24dp"
-        android:text="Tap an item to purchase it." />
+        android:text="Tap an item to purchase it."
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/creditScoreDisplay"
@@ -21,7 +22,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textView"
         android:layout_marginTop="61dp"
-        android:text="wghgth" />
+        android:text="wghgth"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/cargoSpaceDisplay"
@@ -29,7 +31,8 @@
         android:layout_height="50dp"
         android:layout_alignEnd="@+id/buy_item_recycler_view"
         android:layout_alignTop="@+id/creditScoreDisplay"
-        android:text="ehethheteh" />
+        android:text="ehethheteh"
+        tools:ignore="HardcodedText" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/buy_item_recycler_view"
