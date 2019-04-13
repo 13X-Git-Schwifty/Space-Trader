@@ -18,6 +18,7 @@ import java.util.Random;
 
 public class BuyItem extends AppCompatActivity {
     private static final String TAG = "BuyItem";
+    private static final int PRICE_DET = 200;
 
     public static ArrayList<String> getmItemNames() {
         return mItemNames;
@@ -48,7 +49,7 @@ public class BuyItem extends AppCompatActivity {
             || (LoginActivity.getNewPlayer().getCurrPlanet().techLevel).equals(item.getMtlp())
             || (LoginActivity.getNewPlayer().getCurrPlanet().techLevel).equals(item.getTtp())){
                 mItemNames.add(item.toString());
-                mItemPrices.add((int) (Math.random() * 200));
+                mItemPrices.add((int) (Math.random() * PRICE_DET));
 
             } else  {
                 mItemNames.add(item.toString());

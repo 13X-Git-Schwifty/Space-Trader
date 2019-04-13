@@ -17,60 +17,59 @@ public enum Spaceship {
     // distance that can be travelled on full tank,
     // max health of ship, max cargo storage of ship, max weapons slot of ship,
     // max shields slot of ship, max gadgets slot of ship, cost of ship
-    Spaceship(String name, int fuelcapacity, int fueldist, int health,
-              int maxcargo, int maxweaponsslot, int maxshieldslot,
-              int maxgadgetslot, int price, int maxcrewquarters) {
+    Spaceship(String name, int fuelCapacity, int fuelDist, int health,
+              int maxCargo, int maxWeaponsSlot, int maxShieldSlot,
+              int maxGadgetSlot, int price, int maxCrewQuarters) {
         this.name = name;
-        this.fuelcapacity = fuelcapacity;
-        this.fueldistance = fueldist;
+        this.fuelCapacity = fuelCapacity;
+        this.fuelDistance = fuelDist;
         this.health = health;
-        this.maxcargo = maxcargo;
-        this.maxweapons = maxweaponsslot;
-        this.maxshields = maxshieldslot;
-        this.maxgadgets = maxgadgetslot;
+        this.maxCargo = maxCargo;
+        this.maxShields = maxShieldSlot;
+        this.maxGadgets = maxGadgetSlot;
         this.price = price;
-        this.maxcrew = maxcrewquarters;
+        this.maxCrew = maxCrewQuarters;
 
     }
     Spaceship() {this.name = name;}
 
     public String name;
-    private int fuelcapacity;
-    private int fueldistance;
+    private int fuelCapacity;
+    private int fuelDistance;
     private int health;
-    private int maxcargo;
-    private int maxweapons;
-    private int maxshields;
-    private int maxgadgets;
+    private int maxCargo;
+    private int maxWeapons;
+    private int maxShields;
+    private int maxGadgets;
     private int price;
-    private int maxcrew;
+    private int maxCrew;
 
-    public int getFuelcapacity() {
-        return fuelcapacity;
+    public int getFuelCapacity() {
+        return fuelCapacity;
     }
 
-    public int getFueldistance() {
-        return fueldistance;
+    public int getFuelDistance() {
+        return fuelDistance;
     }
 
     public int getHealth() {
         return health;
     }
 
-    public int getMaxcargo() {
-        return maxcargo;
+    public int getMaxCargo() {
+        return maxCargo;
     }
 
-    public int getMaxgadgets() {
-        return maxgadgets;
+    public int getMaxGadgets() {
+        return maxGadgets;
     }
 
-    public int getMaxshields() {
-        return maxshields;
+    public int getMaxShields() {
+        return maxShields;
     }
 
-    public int getMaxweapons() {
-        return maxweapons;
+    public int getMaxWeapons() {
+        return maxWeapons;
     }
 
     public int getPrice() {
@@ -81,8 +80,8 @@ public enum Spaceship {
         this.price = price;
     }
 
-    public int getMaxcrew() {
-        return maxcrew;
+    public int getMaxCrew() {
+        return maxCrew;
     }
 
     public String getName() {

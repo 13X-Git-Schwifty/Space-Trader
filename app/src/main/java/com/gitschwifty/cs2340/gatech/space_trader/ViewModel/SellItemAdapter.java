@@ -25,15 +25,15 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
 
     
 
-     ArrayList<String> Cargoitems;
-    ArrayList<Integer> Cargoitemprice;
+     ArrayList<String> CargoItems;
+    ArrayList<Integer> CargoItemPrice;
     private Context mContext;
     private Player player = LoginActivity.getNewPlayer();
 
 
-    public SellItemAdapter(ArrayList<String> Cargoitems, ArrayList<Integer> Cargoitemprice, Context mContext) {
-        this.Cargoitems = Cargoitems;
-        this.Cargoitemprice = Cargoitemprice;
+    public SellItemAdapter(ArrayList<String> CargoItems, ArrayList<Integer> CargoItemPrice, Context mContext) {
+        this.CargoItems = CargoItems;
+        this.CargoItemPrice = CargoItemPrice;
         this.mContext = mContext;
     }
 
@@ -48,40 +48,40 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
     @Override
     public void onBindViewHolder(@NonNull final BuyItemViewHolder holder, final int i) throws NullPointerException {
         Log.d("hello", "onBindViewHolder: called.") ;
-        holder.buyItemName.setText(Cargoitems.toString());
-        holder.buyItemPrice.setText(Cargoitemprice.get(i).toString());
+        holder.buyItemName.setText(CargoItems.toString());
+        holder.buyItemPrice.setText(CargoItemPrice.get(i).toString());
 
         holder.buyItemLayout.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View view) {
-                if (Cargoitemprice.get(i) == 0) {
-                    Toast.makeText(mContext, Cargoitems.get(i) + " is unavailable to sell.", Toast.LENGTH_SHORT).show();
+                if (CargoItemPrice.get(i) == 0) {
+                    Toast.makeText(mContext, CargoItems.get(i) + " is unavailable to sell.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     try {
-                        if (i >= Cargoitems.size()) {
-                            sell(Cargoitems.get(0));
+                        if (i >= CargoItems.size()) {
+                            sell(CargoItems.get(0));
                             Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
 //                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
-                            Cargoitems.remove(holder.getAdapterPosition());
+                            CargoItems.remove(holder.getAdapterPosition());
                             notifyItemRemoved(holder.getAdapterPosition());
-                            notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
+                            notifyItemRangeChanged(holder.getAdapterPosition(),CargoItems.size());
                         } else {
-                            GoodsList good = GoodsList.valueOf(Cargoitems.get(i));
-                            sell(Cargoitems.get(i));
+                            GoodsList good = GoodsList.valueOf(CargoItems.get(i));
+                            sell(CargoItems.get(i));
                             Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
-//                            LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(i));
-                            Cargoitems.remove(holder.getAdapterPosition());
+//                            LoginActivity.getNewPlayer().removeFromPlayerGoods(CargoItems.get(i));
+                            CargoItems.remove(holder.getAdapterPosition());
                             notifyItemRemoved(holder.getAdapterPosition());
-                            notifyItemRangeChanged(holder.getAdapterPosition(), Cargoitems.size());
+                            notifyItemRangeChanged(holder.getAdapterPosition(), CargoItems.size());
                         }
                     } catch (NullPointerException e) {
-                        sell(Cargoitems.get(0));
+                        sell(CargoItems.get(0));
                         Toast.makeText(mContext, "Item sold! Your credit score is now: " + LoginActivity.getNewPlayer().getCreditScore(), Toast.LENGTH_SHORT).show();
 //                        LoginActivity.getNewPlayer().removeFromPlayerGoods(Cargoitems.get(0));
-                        Cargoitems.remove(holder.getAdapterPosition());
+                        CargoItems.remove(holder.getAdapterPosition());
                         notifyItemRemoved(holder.getAdapterPosition());
-                        notifyItemRangeChanged(holder.getAdapterPosition(),Cargoitems.size());
+                        notifyItemRangeChanged(holder.getAdapterPosition(),CargoItems.size());
                     }
                     }
 
@@ -93,7 +93,7 @@ public class SellItemAdapter extends RecyclerView.Adapter<SellItemAdapter.BuyIte
 
     @Override
     public int getItemCount() {
-        return Cargoitems.size();
+        return CargoItems.size();
     }
 
     //can sell

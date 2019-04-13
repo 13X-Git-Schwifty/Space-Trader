@@ -19,20 +19,20 @@ import static com.gitschwifty.cs2340.gatech.space_trader.View.BuyItem.*;
 
 public class SellItem extends AppCompatActivity {
 
-    ArrayList<String> itemnames = getmItemNames();
+    ArrayList<String> itemNames = getmItemNames();
     ArrayList<String> temp = new ArrayList<>();
     ArrayList<Integer> temp1 = new ArrayList<>();
 
-    ArrayList<Integer> itemprices = getmItemPrices();
-    ArrayList<String> cargoitems = com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter.getCargoitems();
-    ArrayList<Integer> cargoitemsPrice = com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter.getCargoitemprice();
+    ArrayList<Integer> itemPrices = getmItemPrices();
+    ArrayList<String> cargoItems = com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter.getCargoItems();
+    ArrayList<Integer> cargoItemsPrice = com.gitschwifty.cs2340.gatech.space_trader.ViewModel.BuyItemAdapter.getCargoItemPrice();
 
 
     private void initItems() {
-        for (int i = 0;i<cargoitems.size();i++) {
+        for (int i = 0;i<cargoItems.size();i++) {
 
-            temp.add(cargoitems.get(i).toString());
-            temp1.add(cargoitemsPrice.get(i));
+            temp.add(cargoItems.get(i).toString());
+            temp1.add(cargoItemsPrice.get(i));
 
         }
 
@@ -43,8 +43,8 @@ public class SellItem extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell_item);
-        Log.i("piggy",Arrays.toString(cargoitems.toArray()) );
-        Log.i("poilliop",Arrays.toString(itemprices.toArray()) );
+        Log.i("piggy",Arrays.toString(cargoItems.toArray()) );
+        Log.i("poilliop",Arrays.toString(itemPrices.toArray()) );
         initItems();
     }
 

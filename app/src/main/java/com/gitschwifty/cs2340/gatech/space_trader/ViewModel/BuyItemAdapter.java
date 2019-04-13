@@ -19,23 +19,25 @@ import com.gitschwifty.cs2340.gatech.space_trader.View.BuyItem;
 import com.gitschwifty.cs2340.gatech.space_trader.View.LoginActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BuyItemAdapter extends RecyclerView.Adapter<BuyItemAdapter.BuyItemViewHolder>{
     private static final String TAG = "RecyclerViewAdapter_Buy";
+    private static final int CARGO_CAPACITY = 20;
 
-    private ArrayList<String> mItemNames = new ArrayList<>();
+    private List<String> mItemNames;
 
-    public static ArrayList<String> getCargoitems() {
-        return Cargoitems;
+    public static ArrayList<String> getCargoItems() {
+        return CargoItems;
     }
 
-    private static ArrayList<String> Cargoitems = new ArrayList<>(20);
+    private static ArrayList<String> CargoItems = new ArrayList<>(CARGO_CAPACITY);
 
-    public static ArrayList<Integer> getCargoitemprice() {
-        return Cargoitemprice;
+    public static ArrayList<Integer> getCargoItemPrice() {
+        return CargoItemPrice;
     }
 
-    private static ArrayList<Integer> Cargoitemprice = new ArrayList<>();
+    private static ArrayList<Integer> CargoItemPrice = new ArrayList<>();
 
     private ArrayList<Integer> mItemPrices = new ArrayList<>();
     private Context mContext;
@@ -68,8 +70,8 @@ public class BuyItemAdapter extends RecyclerView.Adapter<BuyItemAdapter.BuyItemV
                     Toast.makeText(mContext, mItemNames.get(i) + " is unavailable.", Toast.LENGTH_SHORT).show();
                 } else {
                     GoodsList good = GoodsList.valueOf(mItemNames.get(i));
-                    Cargoitems.add(mItemNames.get(i));
-                    Cargoitemprice.add(mItemPrices.get(i));
+                    CargoItems.add(mItemNames.get(i));
+                    CargoItemPrice.add(mItemPrices.get(i));
                     good.setPrice(mItemPrices.get(i));
                     if (canBuy(good) == false){
                         Toast.makeText(mContext, "Not enough cargo capacity.", Toast.LENGTH_SHORT).show();
@@ -85,7 +87,7 @@ public class BuyItemAdapter extends RecyclerView.Adapter<BuyItemAdapter.BuyItemV
                         creditScoreTV.setText("Your credit score is: " + LoginActivity.getNewPlayer().getCreditScore());
                         //cargo space
                         TextView cargoSpaceTV = ((BuyItem)mContext).findViewById(R.id.cargoSpaceDisplay);
-                        cargoSpaceTV.setText("Remaining cargo space is " + (20 - getCargoitems().size()));
+                        cargoSpaceTV.setText("Remaining cargo space is " + (CARGO_CAPACITY - getCargoItems().size()));
 //                        player.addToPlayerGoods(good);
                     }
                 }
