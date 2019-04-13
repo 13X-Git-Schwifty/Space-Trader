@@ -22,6 +22,7 @@ import java.util.List;
 public class login2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public static Player newPlayer;
     public String name, password;
+    int pilot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class login2 extends AppCompatActivity implements AdapterView.OnItemSelec
         if (isEmpty(et) || isEmpty(et1) || isEmpty(et2) || isEmpty(et3)) {
             Toast.makeText(login2.this, "Fields Not Complete", Toast.LENGTH_SHORT).show();
         } else {
-            int pilot = Integer.parseInt(p);
+             pilot = Integer.parseInt(p);
             int fighter = Integer.parseInt(f);
             int trader = Integer.parseInt(t);
             int engineer = Integer.parseInt(e);
