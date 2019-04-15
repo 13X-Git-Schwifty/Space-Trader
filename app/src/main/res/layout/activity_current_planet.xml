@@ -19,7 +19,8 @@
         app:srcCompat="@drawable/planet1"
         tools:layout_editor_absoluteX="54dp"
         tools:layout_editor_absoluteY="199dp"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription,HardcodedText" />
 
     <Button
         android:layout_width="wrap_content"

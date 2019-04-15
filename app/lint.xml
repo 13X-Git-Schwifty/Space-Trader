@@ -5,7 +5,18 @@
         <ignore path="src/main/res/drawable/loading.gif" />
     </issue>
     <issue id="IconLocation">
+        <ignore path="src/main/res/drawable/icon.png" />
         <ignore path="src/main/res/drawable/loading.gif" />
+        <ignore path="src/main/res/drawable/planet1.png" />
+        <ignore path="src/main/res/drawable/planet10.png" />
+        <ignore path="src/main/res/drawable/planet2.png" />
         <ignore path="src/main/res/drawable/planet3.png" />
+        <ignore path="src/main/res/drawable/planet4.png" />
+        <ignore path="src/main/res/drawable/planet5.png" />
+        <ignore path="src/main/res/drawable/planet6.png" />
+        <ignore path="src/main/res/drawable/planet6.png" />
+        <ignore path="src/main/res/drawable/planet7.png" />
+        <ignore path="src/main/res/drawable/planet8.png" />
+        <ignore path="src/main/res/drawable/planet9.png" />
     </issue>
 </lint>

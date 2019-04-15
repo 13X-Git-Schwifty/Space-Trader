@@ -18,7 +18,8 @@
             android:layout_height="50dp"
             android:src="@drawable/planet1"
             android:id="@+id/img"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription,HardcodedText" />
         <TextView
             android:id="@+id/txtName"
             android:layout_width="match_parent"

@@ -16,6 +16,7 @@ import com.gitschwifty.cs2340.gatech.space_trader.R;
 /**
  * CurrentPlanetActivity
  */
+@SuppressWarnings("ALL")
 public class CurrentPlanetActivity extends AppCompatActivity {
     static CurrentPlanet currentPlanet;
 

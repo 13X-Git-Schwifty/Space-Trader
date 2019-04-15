@@ -4,6 +4,7 @@ package com.gitschwifty.cs2340.gatech.space_trader.Model;
 /**
  * TechLevel
  */
+@SuppressWarnings("ALL")
 public enum TechLevel {
     PRE_AGRICULTURE(0),
     AGRICULTURE(1),

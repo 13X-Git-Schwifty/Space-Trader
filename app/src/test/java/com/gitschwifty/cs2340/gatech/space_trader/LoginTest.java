@@ -14,6 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 //JUnit written by Inan Batra
 
+@SuppressWarnings("ALL")
 public class LoginTest {
 
     Coordinate Coordinate1;

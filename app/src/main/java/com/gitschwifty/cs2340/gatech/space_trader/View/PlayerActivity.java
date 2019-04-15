@@ -11,6 +11,7 @@ import com.gitschwifty.cs2340.gatech.space_trader.R;
 /**
  *
  */
+@SuppressWarnings("ALL")
 public class PlayerActivity extends AppCompatActivity {
 
     @Override

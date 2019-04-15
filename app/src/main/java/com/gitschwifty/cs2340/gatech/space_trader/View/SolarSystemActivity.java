@@ -15,6 +15,7 @@ import com.gitschwifty.cs2340.gatech.space_trader.ViewModel.MyAdapter;
 /**
  * SolarSystemActivity
  */
+@SuppressWarnings("ALL")
 public class SolarSystemActivity extends AppCompatActivity {
 
     @Override
